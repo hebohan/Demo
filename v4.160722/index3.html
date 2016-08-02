@@ -1,0 +1,865 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <title>Untitled Document</title>
+    <!--    <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="assets/css/nucleo-outline.css" rel="stylesheet">
+    <link href="assets/css/nucleo-glyph.css" rel="stylesheet">
+    <link href="assets/css/nucleo-mini.css" rel="stylesheet">
+    <!--    <link rel="stylesheet/less" href="custom/custom.less">-->
+    <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<style>
+    body {
+        font-family: "San Francisco Display", "RobotoDraft", "Roboto", "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+    }
+    
+    .tile {
+        /*        margin-bottom: 10px;*/
+    }
+    
+    .list-unstyled > li {
+        /*        float: left;*/
+        /*        box-sizing:border-box;*/
+    }
+    
+    .panel {
+        border-radius: 0;
+    }
+    
+    ul,
+    li {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .list-unstyled .nc-icon-mini {
+        margin-right: 5px;
+        background-color: #6f5499;
+        padding: 5px;
+        font-size: 14px;
+        color: #fff !important;
+    }
+    
+    .list-unstyled > li > a {
+        color: #666;
+        display: block;
+        padding: 10px 5px;
+    }
+    
+    .panel {
+        background-color: rgba(255, 255, 255, .95);
+        border: 0;
+    }
+    
+    #particles-js {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -10;
+    }
+    /*
+    #particles-js canvas {
+        background-color: #009688;
+    }
+    
+*/
+    
+    html,
+    body {
+        height: 100%;
+    }
+    
+    .btn {
+        border: 0;
+        border-radius: 0;
+    }
+    
+    .v4-feed-list .list-group-item {
+        padding: 25px 30px;
+    }
+    
+    .v4-feed-list .list-group-item-heading {
+        margin-bottom: 15px;
+    }
+    
+    .v4-feed-list .list-group-item-action {
+        position: absolute;
+        top: 12px;
+        right: 10px;
+        display: none;
+    }
+    
+    .v4-feed-list .list-group-item:hover .list-group-item-action {
+        display: block;
+    }
+    
+    .gauge {
+        width: 250px;
+        height: 250px;
+        display: inline-block;
+    }
+    
+    .modal-backdrop {
+        display: none !important;
+    }
+    
+    .ewdeew a {
+        display: block;
+        margin-bottom: 30px;
+    }
+    
+    .ewdeew span {
+        display: block;
+        padding-top: 5px;
+    }
+    
+    .btn-flot {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    .card {
+        overflow: hidden;
+        text-align: center;
+    }
+    
+    .card:nth-child(5n) {
+        margin-right: 0;
+    }
+    
+    .card .card-color {
+        position: relative;
+        height: 300px;
+    }
+    
+    .card .card-color.color-sunny {
+        background-color: #29b6f6;
+    }
+    /* Sunny */
+    
+    .sunny {
+        animation: sunny 9s linear infinite;
+        -webkit-animation: sunny 9s linear infinite;
+        background: #ffe400;
+        border-radius: 100%;
+        box-shadow: rgba(255, 255, 0, 0.1) 0 0 5px 5px;
+        content: '';
+        height: 120px;
+        width: 120px;
+        position: absolute;
+        left: 50%;
+        margin-left: -60px;
+        top: 75px;
+    }
+    
+    .sunny:before {
+        animation: sunglow 9s ease-in-out infinite;
+        -webkit-animation: sunglow 9s ease-in-out infinite;
+        background: #FFEE44;
+        box-shadow: rgba(255, 255, 0, 1) 0 0 5px 1px;
+        border-radius: 100%;
+        content: '';
+        height: 116px;
+        width: 116px;
+        position: absolute;
+        left: 2px;
+        top: 2px;
+    }
+    
+    .sunny:after {
+        animation: sunshadow 9s ease-in-out infinite;
+        -webkit-animation: sunshadow 9s ease-in-out infinite;
+        background: #000000;
+        border-radius: 50%;
+        content: '';
+        height: 15px;
+        width: 120px;
+        opacity: 0.2;
+        position: absolute;
+        left: 50%;
+        margin-left: -60px;
+        bottom: -40px;
+        transform: scale(.7);
+        -webkit-transform: scale(.7);
+    }
+    
+    @keyframes sunny {
+        50% {
+            transform: translateY(-20px);
+            -webkit-transform: translateY(-20px);
+            box-shadow: rgba(255, 255, 0, 0.2) 0 0 5px 15px;
+        }
+    }
+    
+    @-webkit-keyframes sunny {
+        50% {
+            transform: translateY(-20px);
+            -webkit-transform: translateY(-20px);
+            box-shadow: rgba(255, 255, 0, 0.2) 0 0 5px 15px;
+        }
+    }
+    
+    @keyframes sunglow {
+        50% {
+            box-shadow: rgba(255, 255, 0, 0.1) 0 0 5px 10px;
+        }
+    }
+    
+    @-webkit-keyframes sunglow {
+        50% {
+            box-shadow: rgba(255, 255, 0, 0.1) 0 0 5px 10px;
+        }
+    }
+    
+    @keyframes sunshadow {
+        50% {
+            transform: translateY(20px) scale(1);
+            -webkit-transform: translateY(20px) scale(1);
+            opacity: .05;
+        }
+    }
+    
+    @-webkit-keyframes sunshadow {
+        50% {
+            transform: translateY(20px) scale(1);
+            -webkit-transform: translateY(20px) scale(1);
+            opacity: .05;
+        }
+    }
+    
+    .v4-nav-pills-1 {
+        border: 0;
+    }
+    
+    .v4-nav-pills-1 > li > a {
+        color: #fff !important;
+        border-left: 1px solid #fff;
+        background-color: rgba(0, 0, 0, .0) !important;
+    }
+    
+    .v4-nav-pills-1 > li.active > a {
+        /*        background-color: transparent !important;*/
+    }
+    
+    .v4-nav-pills-1 .f-s-48 {
+        /*        font-size: 32px*/
+    }
+
+</style>
+
+<body class="js-scroll" style="background: #444 url(assets/img/SiteBackgroundxx.png); background-attachment: fixed;">
+    <header class="navbar navbar-fixed-top navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <i class="nc-icon-glyph ui-2_cloud-25"></i> <strong>浪潮政务服务云平台</strong>
+                </a>
+                <button class="navbar-toggle" data-toggle="aside"></button>
+            </div>
+
+            <ul class="nav navbar-nav">
+                <li class="dropdown dropdown-hover" style="margin-right: 15px;">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="border-left: 1px solid rgba(255,255,255,.1); border-right: 1px solid rgba(255,255,255,.1); ">
+                        <i class="nc-icon-glyph ui-2_grid-48 lg"></i>
+                    </a>
+                    <div class="dropdown-menu" style="padding: 20px; margin:0; width: 800px;">
+
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <h5><strong>应用</strong></h5>
+                                <ul class="list-unstyled">
+                                    <li><a href="#"><i class="nc-icon-mini arrows-e_move-bottom-right text-primary" style="border-color:#0db0e5;"></i> 行政审批</a></li>
+                                    <li><a href="#"><i class="nc-icon-mini business_percentage-39 text-warning" style="border-color:#ff9800;"></i> 并联审批</a></li>
+                                    <li><a href="#"><i class="nc-icon-mini design_eraser-46 text-info" style="border-color:#0db0e5;"></i> 事项管理</a></li>
+                                    <li><a href="#"><i class="nc-icon-mini design_shape-triangle text-success" style="color: #009688;"></i> 三证合一</a></li>
+                                    <li><a href="#"><i class="nc-icon-mini design_shape-adjust text-danger"></i> 行政处罚</a></li>
+                                    <li><a href="#"><i class="nc-icon-mini envir_level text-primary" style="color: #673ab7;"></i> 网办管理</a></li>
+                                    <li><a href="#"><i class="nc-icon-mini furniture_storage text-info"></i> 电子证照</a></li>
+                                    <li><a href="#"><i class="nc-icon-mini design_blend text-success" style="color: #d81b60;"></i> 法制监督</a></li>
+                                    <li><a href="#"><i class="nc-icon-mini envir_fuel-electric text-primary"></i> 电子监察</a></li>
+                                    <li><a href="#"><i class="nc-icon-mini shopping_bag-20 text-danger"></i> OA办公</a></li>
+                                    <li><a href="#"><i class="nc-icon-mini ui-2_book text-warning"></i> 云受理平台</a></li>
+                                    <li><a href="#"><i class="nc-icon-mini ui-2_time-clock text-primary" style="color: #c0ca33;"></i> 决策分析</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-4">
+                                <h5><strong>协作</strong></h5>
+                                <ul class="list-unstyled">
+                                    <li><a href="#"><i class="nc-icon-mini envir_level text-primary" style="color: #673ab7;"></i> 政务云盘</a></li>
+                                    <li><a href="#"><i class="nc-icon-mini design_eraser-46 text-info" style="border-color:#0db0e5;"></i> 政务协作</a></li>
+                                    <li><a href="#"><i class="nc-icon-mini ui-2_book text-warning"></i> 政务云盘</a></li>
+                                </ul>
+                                <h5><strong>数据</strong></h5>
+                                <ul class="list-unstyled">
+                                    <li><a href="#"><i class="nc-icon-mini business_percentage-39 text-warning" style="border-color:#ff9800;"></i> 数据中心</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-4">
+                                <h5><strong>管理</strong></h5>
+                                <ul class="list-unstyled">
+                                    <li><a href="#"><i class="nc-icon-mini envir_level text-primary" style="color: #673ab7;"></i> 基础平台</a></li>
+                                    <li><a href="#"><i class="nc-icon-mini shopping_bag-20 text-danger"></i> 云工作流</a></li>
+                                    <li><a href="#"><i class="nc-icon-mini ui-2_book text-warning"></i> 云表单</a></li>
+                                    <li><a href="#"><i class="nc-icon-mini design_shape-adjust text-danger"></i> 云调度</a></li>
+                                    <li><a href="#"><i class="nc-icon-mini ui-2_book text-warning"></i> 云报表</a></li>
+                                    <li><a href="#"><i class="nc-icon-mini business_percentage-39 text-warning" style="border-color:#ff9800;"></i> 版本管理</a></li>
+                                </ul>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#">常用菜单</a></li>
+                <li><a href="#">常用菜单</a></li>
+                <li><a href="#">常用菜单</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><i class="nc-icon-outline ui-1_zoom lg"></i></a></li>
+                <li><a href="#"><i class="nc-icon-outline ui-1_email-84 lg"></i><i class="nc-icon-glyph media-1_button-record text-danger" style="top: 8px;right:0px; position: absolute;"></i></a></li>
+                <li><a href="#"><i class="nc-icon-outline ui-1_settings-gear-63 lg"></i></a></li>
+
+                <li class="dropdown">
+                    <a href="#" style="padding:0; padding-left:15px;">
+                        <img src="assets/img/avatar-10.jpg" width="50" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div style="display:table; height: 100%; width: 3500px;">
+        <ul class="square-group" style="display:table-cell; vertical-align: middle; height: 500px; padding-left:120px;">
+            <li class="square-group-item">
+                <section class="panel text-center" style="width: 300px; height: 450px; padding: 30px;">
+                    <img class="img-circle" src="assets/img/avatar-10.jpg" style="padding: 15px;" alt="">
+                    <h4><strong>平台管理员</strong></h4>
+                    <p>部门：山东省工商行政管理局</p>
+                    <small class="text-muted">职务：领导</small>
+                    <hr style="border-color: #ddd;">
+                    <div class="btn-group btn-group-justified">
+                        <a class="btn btn-link" href="#">
+                            <i class="nc-icon-outline ui-1_email-85 lg" data-original-title="Letter" data-toggle="tooltip" data-placement="top"></i>
+                        </a>
+                        <a class="btn btn-link" href="#"><i class="nc-icon-outline ui-1_lock lg"  data-original-title="Password" data-toggle="tooltip" data-placement="top"></i></a>
+                        <a class="btn btn-link" href="#"><i class="nc-icon-outline ui-1_settings-gear-63 lg" data-original-title="Settings" data-toggle="tooltip" data-placement="top"></i></a>
+                    </div>
+                    <hr style="border-color: #ddd;">
+
+                    <!--                    <small id="currentTime"></small>-->
+                </section>
+            </li>
+            <li class="square-group-item">
+                <section class="panel text-center" style="width:300px; height: 450px;">
+                    <div id="g1" class="gauge"></div>
+                    <br>
+                    <br>
+                    <h4>我的网盘</h4>
+                    <p>网盘容量: 755.83 M / 10 G</p>
+                    <br>
+                    <a class="btn btn-success" href="#">进入网盘</a>
+                </section>
+            </li>
+            <li class="square-group-item" style="padding-right:0;">
+                <section class="panel" style="width: 240px; background-color: transparent;">
+                    <div class="btn-success text-center" style="height: 140px; margin-bottom: 15px; background-color: #ff7043;">
+                        <br>
+                        <em class="f-s-48">274</em>
+                        <h4 class="m-t-0">待办事项</h4>
+                    </div>
+
+                    <div class="btn-success text-center" style="height: 140px; margin-bottom: 15px; background-color: #00bcd4;">
+                        <br>
+                        <em class="f-s-48">0</em>
+                        <h4 class="m-t-0">通知公告</h4>
+                    </div>
+                    <div class="tile btn-success text-center" style="height: 140px; background-color: #9575cd;">
+                        <br>
+                        <em class="f-s-48">7</em>
+                        <h4 class="m-t-0">我的收藏</h4>
+                    </div>
+
+                </section>
+            </li>
+
+            <li class="square-group-item" style="padding-left:15px;">
+                <section class="panel relative" style="width:600px; height: 450px; padding: 30px;">
+
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="position:absolute; margin:0; top:0; bottom:0;box-shadow:none; border-radius:0; background-color: rgba(255,255,255,.99); ">
+                        <div class="modal-dialog" style="height:100%;margin:0; width: 100%;padding: 30px !important;">
+                            <div class="modal-contentxx">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                                </div>
+                                <table class="table table-hover no-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <td><a href="#">Domestic funded enterprise name pre approved</a></td>
+                                            <td class="text-right">2015-10-29</td>
+                                        </tr>
+                                        <tr>
+
+                                            <td><a href="#">Batch business data import</a></td>
+                                            <td class="text-right">2015-10-29</td>
+                                        </tr>
+                                        <tr>
+
+                                            <td><a href="#">Changle event information input</a></td>
+                                            <td class="text-right">2015-10-29</td>
+                                        </tr>
+                                        <tr>
+
+                                            <td><a href="#">Resources Bureau collective construction land permit</a></td>
+                                            <td class="text-right">2015-10-29</td>
+                                        </tr>
+                                        <tr>
+
+                                            <td><a href="#">Changle event information input</a></td>
+                                            <td class="text-right">2015-10-29</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">Changle event information input</a></td>
+                                            <td class="text-right">2015-10-29</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">Resources Bureau collective construction land permit</a></td>
+                                            <td class="text-right">2015-10-29</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">Resources Bureau collective</a></td>
+                                            <td class="text-right">2015-10-29</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">Resources Bureau collective</a></td>
+                                            <td class="text-right">2015-10-29</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row text-center ewdeew">
+                        <div class="col-xs-3">
+                            <a href="#" data-toggle="modal" data-target="#myModal">
+                                <img width="60" src="assets/img/a-i-1.png" alt="">
+                                <h5>点我查看详细<br><span class="text-muted">157</span></h5>
+                            </a>
+                        </div>
+                        <div class="col-xs-3">
+                            <a class="" href="#">
+                                <img width="60" src="assets/img/a-i-2.png" alt="">
+                                <h5>云受理<br><span class="text-muted">17</span></h5>
+                            </a>
+                        </div>
+                        <div class="col-xs-3">
+                            <a class="" href="#">
+                                <img width="60" src="assets/img/a-i-3.png" alt="">
+                                <h5>行政审批<br><span class="text-muted">0</span></h5>
+                            </a>
+                        </div>
+                        <div class="col-xs-3">
+                            <a class="" href="#">
+                                <img width="60" src="assets/img/a-i-4.png" alt="">
+                                <h5>三证合一<br><span class="text-muted">5</span></h5>
+                            </a>
+                        </div>
+                        <div class="col-xs-3">
+                            <a class="" href="#">
+                                <img width="60" src="assets/img/a-i-6.png" alt="">
+                                <h5>行政处罚<br><span class="text-muted">0</span></h5>
+                            </a>
+                        </div>
+                        <div class="col-xs-3">
+                            <a class="" href="#">
+                                <img width="60" src="assets/img/a-i-7.png" alt="">
+                                <h5>并联审批<br><span class="text-muted">19</span></h5>
+                            </a>
+                        </div>
+                        <div class="col-xs-3">
+                            <a class="" href="#">
+                                <img width="60" src="assets/img/a-i-8.png" alt="">
+                                <h5>权力运行<br><span class="text-muted">102</span></h5>
+                            </a>
+                        </div>
+                        <div class="col-xs-3">
+                            <a class="" href="#">
+                                <img width="60" src="assets/img/a-i-9.png" alt="">
+                                <h5>电子证照<br><span class="text-muted">0</span></h5>
+                            </a>
+                        </div>
+                        <div class="col-xs-3">
+                            <a class="" href="#">
+                                <img width="60" src="assets/img/a-i-10.png" alt="">
+                                <h5>内容管理<br><span class="text-muted">1</span></h5>
+                            </a>
+                        </div>
+                        <div class="col-xs-3">
+                            <a class="" href="#">
+                                <img width="60" src="assets/img/a-i-12.png" alt="">
+                                <h5>决策分析<br><span class="text-muted">0</span></h5>
+                            </a>
+                        </div>
+                        <div class="col-xs-3">
+                            <a class="" href="#">
+                                <img width="60" src="assets/img/a-i-13.png" alt="">
+                                <h5>Funded<br><span class="text-muted">1</span></h5>
+                            </a>
+                        </div>
+                        <div class="col-xs-3">
+                            <a class="" href="#">
+                                <img width="60" src="assets/img/a-i-14.png" alt="">
+                                <h5>Changle<br><span class="text-muted">102</span></h5>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </li>
+
+
+            <li class="square-group-item">
+                <section class="panel text-center" style="width:480px; height: 450px; padding: 30px 0; background-color: #fff; ">
+                    <div id="chart_01" style="height: 300px;"></div>
+                    <h4><strong>业务状态图</strong></h4>
+                    <p style="padding: 0 30px;"> 暂停实施：0件，事项取消：17件，事项变更：31件，试想发布：721件，共769 条记录</p>
+                </section>
+            </li>
+            <li class="square-group-item">
+                <section class="panel text-center" style="width:300px; height: 450px;">
+                    <div class="card">
+                        <div class="card-color color-sunny">
+                            <div class="sunny"></div>
+                        </div>
+                        <h1>27 ℃</h1>
+                        <p>晴转多云，28/23℃</p>
+
+                        <p class="text-muted">阵风4-5级</p>
+
+                    </div>
+                </section>
+            </li>
+            <li class="square-group-item">
+                <div class="relative" style="background-color: #fff; padding: 25px 30px; margin-bottom: 15px;">
+                    <input type="text" class="form-control no-bordered transparent p-x-0" style=" box-shadow:none;" placeholder="今天你动弹了吗~">
+                    <!--                    <button type="submit" class="btn btn-warning btn-flot" style="position: absolute; right: 30px; bottom: -30px; z-index: 930; background-color: #fd9a00;">发表</button>-->
+                </div>
+                <section class="panel js-scroll" style="width:480px; height:350px;">
+                    <ul class="list-group v4-feed-list">
+                        <li class="list-group-item">
+                            <header class="list-group-item-heading media">
+                                <div class="media-left">
+                                    <img class="media-object" src="http://lorempixel.com/40/40/people/6" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <h5 class="media-heading">平台管理员</h5>
+                                    <small class="text-muted">2016-04-25 15:06:36    来自 PC</small>
+                                </div>
+                            </header>
+                            <div class="list-group-item-body">
+                                <p>讲道理我昨天空战重弩去打宝缠都被踢，后来才知道宝缠太高跳散弹没卵用...</p>
+                            </div>
+                            <ul class="list-inline text-right small">
+                                <li><a href="#">浏览 3</a></li>
+                                <li><a href="#">评论 0</a></li>
+                                <li><a href="#">点赞 9</a></li>
+                            </ul>
+                            <button type="button" class="list-group-item-action btn btn-link">
+                                <i class="nc-icon-outline ui-1_simple-remove"></i>
+                            </button>
+                        </li>
+                        <li class="list-group-item">
+                            <header class="list-group-item-heading media">
+                                <div class="media-left">
+                                    <img class="media-object" src="http://lorempixel.com/40/40/people/4" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <h5 class="media-heading">Simmons</h5>
+                                    <small class="text-muted">2016-04-25 15:06:36    来自 PC</small>
+                                </div>
+                            </header>
+                            <div class="list-group-item-body">
+                                <p>有没有聚聚能把骸龙的血量调成5倍的</p>
+
+                            </div>
+
+                            <ul class="list-inline text-right small">
+                                <li><a href="#">浏览 7</a></li>
+                                <li><a href="#">评论 0</a></li>
+                                <li><a href="#">点赞 17</a></li>
+                            </ul>
+
+                            <button type="button" class="list-group-item-action btn btn-link"><i class="nc-icon-outline ui-1_simple-remove"></i></button>
+                        </li>
+
+
+
+                        <li class="list-group-item">
+                            <header class="list-group-item-heading media">
+                                <div class="media-left">
+                                    <img class="media-object" src="http://lorempixel.com/40/40/people/3" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <h5 class="media-heading">田一块</h5>
+                                    <small class="text-muted">2016-04-25 15:06:36 来自 Sony Z3</small>
+                                </div>
+                            </header>
+                            <div class="list-group-item-body">
+                                <p>加载微信脚本时候会不拦截强行在微信脚本中加入广告</p>
+                            </div>
+
+                            <ul class="list-inline text-right small">
+                                <li><a href="#">浏览 217</a></li>
+                                <li><a href="#">评论 32</a></li>
+                                <li><a href="#">点赞 7</a></li>
+                            </ul>
+
+                            <button type="button" class="list-group-item-action btn btn-link"><i class="nc-icon-outline ui-1_simple-remove"></i></button>
+                        </li>
+                        <li class="list-group-item text-center">
+                            <a href="#">Loading more...</a>
+                        </li>
+
+
+
+                    </ul>
+
+                </section>
+            </li>
+        </ul>
+    </div>
+    <footer class="navbar navbar-fixed-bottom" style=" padding: 30px 0; color: rgba(255,255,255,.6); font-size:12px; ">
+        <div class="container-fluid text-center">
+            Copyright © 2013 - 2015 Highcharts中文网, 闽ICP备14003466号-1, All Rights Reserved.
+        </div>
+    </footer>
+    <div id="particles-js"></div>
+    <script src="http://cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="http://cdn.bootcss.com/less.js/2.5.1/less.min.js"></script>
+    <script src="http://cdn.bootcss.com/raphael/2.1.4/raphael-min.js"></script>
+    <script src="http://cdn.bootcss.com/justgage/1.2.2/justgage.min.js"></script>
+    <script src="http://cdn.bootcss.com/particles.js/1.1.0/particles.min.js"></script>
+    <script src="http://cdn.bootcss.com/jquery.nicescroll/3.6.6/jquery.nicescroll.min.js"></script>
+    <script src="http://cdn.bootcss.com/highcharts/4.2.3/highcharts.js"></script>
+    <script>
+        var g = new JustGage({
+            id: "g1",
+            value: 15,
+            min: 0,
+            max: 100,
+            donut: true,
+            gaugeWidthScale: 0.6,
+            counter: true,
+            hideInnerShadow: true
+
+        });
+
+    </script>
+
+    <script>
+        $(function() {
+            $('#chart_01').highcharts({
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false
+                },
+                title: {
+                    text: false
+                },
+                credits: {
+                    enabled: false,
+
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                            style: {
+                                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                            }
+                        }
+                    }
+                },
+                series: [{
+                    type: 'pie',
+                    name: 'Browser share',
+                    data: [
+                        ['Firefox', 45.0],
+                        ['IE', 26.8], {
+                            name: 'Chrome',
+                            y: 12.8,
+                            sliced: true,
+                            selected: true
+                        },
+                        ['Safari', 8.5],
+                        ['Opera', 6.2],
+                        ['Others', 0.7]
+                    ]
+                }]
+            });
+        });
+
+        $(function() {
+
+            $('#chart_02').highcharts({
+                //        	colors: ["#ff6e61", "#00b777", "#4b6db4", "#a28af1", "#0192a3", "#82914E", "#86777F", "#42A07B"],
+                colors: ["#3dbb7c", "#ff6b64", "#ffdc81", "#f89abc", "#0192a3", "#82914E", "#86777F", "#42A07B"],
+                chart: {
+                    backgroundColor: null,
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'pie'
+                },
+                title: {
+
+                    text: false
+                },
+                subtitle: {
+                    text: false
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                credits: {
+                    enabled: false,
+
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: false
+                        },
+                        showInLegend: true
+                    }
+                },
+                series: [{
+                    name: 'Brands',
+                    colorByPoint: true,
+                    data: [{
+                        name: 'Microsoft Internet Explorer',
+                        y: 45
+                    }, {
+                        name: 'Chrome',
+                        y: 25,
+
+                    }, {
+                        name: 'Firefox',
+                        y: 10
+                    }, {
+                        name: 'Opera',
+                        y: 20,
+                        sliced: true,
+                        selected: true
+                    }]
+                }]
+            });
+
+        });
+
+
+        $(function() {
+            $('.js-scroll').niceScroll({
+                cursorcolor: "#000",
+                cursoropacitymin: 0,
+                cursoropacitymax: 0.5,
+                cursorwidth: "8px",
+                cursorborder: "0",
+                cursorborderradius: "0",
+                //                autohidemode: false,
+                mousescrollstep: 40,
+                scrollspeed: 60,
+            });
+        });
+        $(function() {
+            $('[data-toggle="tooltip"]').tooltip()
+        });
+        $(function() {
+            setInterval(function() {
+                var now = (new Date()).toLocaleString();
+                $('#currentTime').text(now);
+            }, 1000);
+        });
+        //        $(function() {
+        //            $(window).resize(function() {
+        //                var myDivHeight = $(window).height() - 0;
+        //                $(".dessffr").css("height", myDivHeight);
+        //            }).resize();
+        //        });
+
+    </script>
+
+    <script>
+        $(function() {
+            particlesJS('particles-js', {
+                particles: {
+                    color: '#fff',
+                    shape: 'triangle', // "circle", "edge" or "triangle"
+                    opacity: 0.5,
+                    size: 5,
+                    size_random: true,
+                    nb: 150,
+                    line_linked: {
+                        enable_auto: true,
+                        distance: 150,
+                        color: '#fff',
+                        opacity: 0.5,
+                        width: 1,
+                        condensed_mode: {
+                            enable: false,
+                            rotateX: 600,
+                            rotateY: 600
+                        }
+                    },
+                    anim: {
+                        enable: true,
+                        speed: 2
+                    }
+                },
+                interactivity: {
+                    enable: true,
+                    mouse: {
+                        distance: 300
+                    },
+                    detect_on: 'canvas', // "canvas" or "window"
+                    mode: 'grab',
+                    line_linked: {
+                        opacity: 0.5
+                    },
+                    events: {
+                        onclick: {
+                            enable: true,
+                            mode: 'push', // "push" or "remove"
+                            nb: 4
+                        }
+                    }
+                },
+                /* Retina Display Support */
+                retina_detect: true
+            });
+        });
+
+    </script>
+
+
+</body>
+
+</html>

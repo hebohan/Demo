@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <title>Template</title>
+    <link rel="icon" href="assets/ico/favicon.ico">
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+        <script src="http://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+        <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        body {
+            font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+        }
+        
+        .container {
+            width: 1080px !important;
+        }
+        
+        .log-navbar {
+            padding: 15px 0;
+            margin-bottom: 0;
+            background-color: #fff;
+            border: 0;
+            /*            height: 80px;*/
+            /*            overflow: hidden;*/
+        }
+        
+        .log-navbar .navbar-brand {
+            font-size: 24px;
+            margin-left: -15px;
+        }
+        
+        .log-navbar .navbar-header {
+            margin-right: 0;
+            margin-left: 0;
+            float: left;
+        }
+        
+        .log-navbar .list-inline {
+            margin-top: 15px;
+        }
+        
+        .log-navbar .list-inline > li > a {
+            color: #666;
+            border-left: 1px solid #ccc;
+            padding-left: 15px;
+            margin-left: 3px;
+            color: #999;
+        }
+        
+        .log-navbar .list-inline > li:first-child > a {
+            border-left: 0;
+        }
+        
+        .log-navbar .navbar-text {
+            border-left: 1px solid #ccc;
+            padding-left: 15px;
+            font-size: 16px;
+            margin-left: 0;
+            float: left;
+        }
+        /*
+        .log-carousel {
+            background-color: #000;
+        }
+        
+        .log-carousel > li {
+            background-image: url(assets/img/p_s_1.jpg);
+            background-position: top center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+*/
+        
+        .log-jumbotron {
+            position: relative;
+            overflow: hidden;
+            background: #1e88e5 url(assets/img/bg_wave.png) center bottom no-repeat;
+        }
+        
+        .log-jumbotron .filter {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, .3);
+            z-index: 88888;
+        }
+        
+        .log-publicity {
+            margin: 0;
+            position: absolute;
+            z-index: 999999;
+            right: 50%;
+            top: 50%;
+            margin-top: -120px;
+            margin-right: 50px;
+            color: #fff;
+        }
+        
+        .log-footer {
+            padding: 30px 0;
+            color: #999;
+            height: 110px;
+            overflow: hidden;
+        }
+        
+        .log-panel {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-top: -160px;
+            margin-left: 150px;
+            width: 350px;
+            overflow: hidden;
+            z-index: 99999;
+            opacity: .9;
+        }
+        
+        .log-form {
+            padding: 25px;
+            background-color: #fff;
+        }
+        
+        .log-help {
+            padding: 0 25px;
+            padding-bottom: 25px;
+            margin-top: -10px;
+            background-color: #fff;
+            font-size: 12px;
+        }
+        
+        .log-help .checkbox {
+            margin: 0;
+            color: #666;
+        }
+        
+        .log-help .checkbox input[type=checkbox] {
+            top: -2px;
+        }
+        
+        .log-help .pull-right {
+            color: #666;
+            border-left: 1px solid #ccc;
+            padding-left: 10px;
+            margin-left: 10px;
+        }
+        
+        .log-help .pull-right:last-child {
+            border-left: 0;
+        }
+        
+        .log-form .form-group {
+            margin-bottom: -1px;
+        }
+        
+        .log-form .form-control {
+            border-radius: 0;
+            box-shadow: none !important;
+            height: 42px;
+            padding: 10px 15px;
+            border-color: #d5d5d5 !important;
+        }
+        
+        .log-form .form-control:focus {
+            background-color: rgba(0, 0, 0, .05);
+        }
+        
+        .log-btn {
+            margin-top: 15px;
+            padding: 8px 15px;
+            border-color: transparent !important;
+            border-radius: 0;
+            /*            background-color: #FD6223;*/
+            font-size: 18px;
+        }
+        
+        .log-nav-tabs > li {
+            display: table-cell;
+            width: 1%;
+            float: none;
+        }
+        
+        .log-nav-tabs > li > a {
+            padding: 12px 0;
+            font-size: 18px;
+            border-radius: 0 !important;
+            border: 0 !important;
+            background-color: rgba(0, 0, 0, .4);
+            color: rgba(255, 255, 255, .6);
+            margin-bottom: 0 !important;
+            /*            font-weight: bold; */
+        }
+        
+        .log-nav-tabs > li > a:hover {
+            background-color: rgba(0, 0, 0, .5);
+            color: #fff;
+        }
+        
+        #particleWave {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #1e88e5;
+        }
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-static-top navbar-default log-navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><strong>浪潮云服务推进系统</strong></a>
+            </div>
+            <p class="navbar-text"><strong>用户登录</strong></p>
+
+            <ul class="list-inline pull-right">
+                <li><a href="#">回到首页</a></li>
+                <li><a href="#">帮助中心</a></li>
+            </ul>
+
+        </div>
+    </nav>
+    <div id="cookWave" class="log-jumbotron">
+        <div class="log-publicity">
+            <h1 style="font-size: 48px;"><strong>海量应用，开放共享</strong></h1>
+            <h4 style="color: rgba(255,255,255,.6);">MASSIVE APPLICATION, OPEN SHARING</h4>
+            <br>
+            <br>
+            <p style="color: rgba(255,255,255,.6);">当前版本： v3.3.5 </p>
+        </div>
+        <section class="log-panel">
+            <ul class="nav nav-tabs nav-justified log-nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#adLogin">账户登录</a></li>
+                <li><a data-toggle="tab" href="#caLogin">CA证书登录</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="adLogin">
+                    <form class="log-form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="" placeholder="账号 / 手机号 / 邮箱">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="" placeholder="密码">
+                        </div>
+                        <!--
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="" placeholder="验证码">
+                        </div>
+-->
+                        <button type="submit" class="btn btn-warning btn-block log-btn" style="background-color: #FD6223;"><strong>登录</strong></button>
+                    </form>
+                </div>
+                <div class="tab-pane" id="caLogin">
+                    <form class="log-form">
+                        <div class="form-group">
+                            <select class="form-control">
+                                <option>选择您的证书</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-block log-btn"><strong>CA证书登录</strong></button>
+                    </form>
+                </div>
+            </div>
+            <div class="clearfix log-help">
+                <div class="checkbox pull-left">
+                    <label>
+                        <input type="checkbox" value="">记住密码
+                    </label>
+                </div>
+                <a class="pull-right" href="#">免费注册</a>
+                <a class="pull-right" href="#">忘记密码?</a>
+            </div>
+        </section>
+
+        <!--        <div class="filter"></div>-->
+    </div>
+
+    <footer class="log-footer">
+        <div class="container text-center">
+            <p>主办单位：浪潮云服务集团&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;技术支持：0531-888888(电话)、15088888888(手机)</p>
+            <p>建议使用1366*768分辨率/IE9.0或以上浏览器访问达到最佳效果</p>
+        </div>
+    </footer>
+    <!-- JavaScript -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="http://cdn.bootcss.com/three.js/r60/three.min.js"></script>
+    <script>
+        $(function() {
+            $(window).resize(function() {
+                var myDivHeight = $(window).height() - 195;
+                $(".log-jumbotron").css("height", myDivHeight);
+            }).resize();
+        });
+
+    </script>
+    <script>
+        var SEPARATION = 100,
+            AMOUNTX = 50,
+            AMOUNTY = 50;
+
+        var container;
+        var cookWave;
+        var camera, scene, renderer;
+
+        var particles, particle, count = 0;
+
+        var mouseX = 0,
+            mouseY = 0;
+
+        var window = document.getElementById('cookWave');
+        var windowHalfX = window.innerWidth / 2;
+        var windowHalfY = window.innerHeight / 2;
+
+        init();
+        animate();
+
+        function init() {
+            cookWave = document.getElementById("cookWave");
+            container = document.createElement('div');
+            container.setAttribute('id', 'particleWave');
+            cookWave.appendChild(container);
+
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 100, 10000);
+            camera.position.z = 1000;
+
+            scene = new THREE.Scene();
+
+            particles = new Array();
+
+            var PI2 = Math.PI * 2;
+            var material = new THREE.ParticleCanvasMaterial({
+
+                color: 0xffffff,
+                opacity: 0.5,
+
+                program: function(context) {
+
+                    context.beginPath();
+                    context.arc(0, 0, 1, 0, PI2, true);
+                    context.fill();
+
+                }
+
+            });
+
+            var i = 0;
+
+            for (var ix = 0; ix < AMOUNTX; ix++) {
+
+                for (var iy = 0; iy < AMOUNTY; iy++) {
+
+                    particle = particles[i++] = new THREE.Particle(material);
+                    particle.position.x = ix * SEPARATION - ((AMOUNTX * SEPARATION) / 2);
+                    particle.position.z = iy * SEPARATION - ((AMOUNTY * SEPARATION) / 2);
+                    scene.add(particle);
+
+                }
+
+            }
+
+            renderer = new THREE.CanvasRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            container.appendChild(renderer.domElement);
+
+            document.addEventListener('mousemove', onDocumentMouseMove, false);
+            document.addEventListener('touchstart', onDocumentTouchStart, false);
+            document.addEventListener('touchmove', onDocumentTouchMove, false);
+
+
+            window.addEventListener('resize', onWindowResize, false);
+
+        }
+
+        function onWindowResize() {
+
+            windowHalfX = window.innerWidth / 2;
+            windowHalfY = window.innerHeight / 2;
+
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+
+            renderer.setSize(window.innerWidth, window.innerHeight);
+
+        }
+
+
+        function onDocumentMouseMove(event) {
+
+            mouseX = event.clientX - windowHalfX;
+            mouseY = event.clientY - windowHalfY;
+
+        }
+
+        function onDocumentTouchStart(event) {
+
+            if (event.touches.length === 1) {
+
+                event.preventDefault();
+
+                mouseX = event.touches[0].pageX - windowHalfX;
+                mouseY = event.touches[0].pageY - windowHalfY;
+
+            }
+
+        }
+
+        function onDocumentTouchMove(event) {
+
+            if (event.touches.length === 1) {
+
+                event.preventDefault();
+
+                mouseX = event.touches[0].pageX - windowHalfX;
+                mouseY = event.touches[0].pageY - windowHalfY;
+
+            }
+
+        }
+
+
+        function animate() {
+            requestAnimationFrame(animate);
+            render();
+        }
+
+        function render() {
+            camera.position.x += (mouseX - camera.position.x) * .05;
+            camera.position.y += (-mouseY - camera.position.y) * .05;
+            camera.lookAt(scene.position);
+
+            var i = 0;
+
+            for (var ix = 0; ix < AMOUNTX; ix++) {
+                for (var iy = 0; iy < AMOUNTY; iy++) {
+                    particle = particles[i++];
+                    particle.position.y = (Math.sin((ix + count) * 0.3) * 50) + (Math.sin((iy + count) * 0.5) * 50);
+                    particle.scale.x = particle.scale.y = (Math.sin((ix + count) * 0.3) + 1) * 2 + (Math.sin((iy + count) * 0.5) + 1) * 2;
+                }
+            }
+            renderer.render(scene, camera);
+            count += 0.1;
+        }
+
+    </script>
+
+</body>
+
+</html>
