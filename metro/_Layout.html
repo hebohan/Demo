@@ -63,7 +63,7 @@
         bottom: 0;
         z-index: -10;
     }
-
+    
     html,
     body {
         height: 100%;
@@ -245,7 +245,6 @@
     .v4-nav-pills-1 .f-s-48 {
         /*        font-size: 32px*/
     }
-
 </style>
 
 <body class="js-scroll" style="background: #444; background-attachment: fixed;">
@@ -263,27 +262,23 @@
                 <li><a href="#">应用</a></li>
                 <li><a href="#">IP白名单</a></li>
                 <li class="dropdown dropdown-hover">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" >
-                        授权
+                    <a class="dropdown-toggle site" data-toggle="dropdown" href="#">                        
+                       授权
                     </a>
                     <div class="dropdown-menu" style="padding: 20px; margin:0; width: 180px;">
-                        <div class="row">
-                            <div>                                
-                                <ul class="list-unstyled">
-                                    <li><a href="#"><i class="nc-icon-mini arrows-e_move-bottom-right text-primary" style="border-color:#0db0e5;"></i> 授权信息</a></li>
-                                    <li><a href="#"><i class="nc-icon-mini business_percentage-39 text-warning" style="border-color:#ff9800;"></i> 授权码</a></li>                                    
-                                </ul>
-                            </div>
-                        </div>
+                        <ul class="list-unstyled">
+                            <li><a href="#"><i class="nc-icon-mini arrows-e_move-bottom-right text-primary" style="border-color:#0db0e5;"></i> 授权信息</a></li>
+                            <li><a href="#"><i class="nc-icon-mini business_percentage-39 text-warning" style="border-color:#ff9800;"></i> 授权码</a></li>
+                        </ul>
                     </div>
                 </li>
                 <li class="dropdown dropdown-hover">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" >
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         基本信息
                     </a>
                     <div class="dropdown-menu" style="padding: 20px; margin:0; width: 180px;">
                         <div class="row">
-                            <div >                                
+                            <div>
                                 <ul class="list-unstyled">
                                     <li><a href="#"><i class="nc-icon-mini arrows-e_move-bottom-right text-primary" style="border-color:#0db0e5;"></i> 公司</a></li>
                                     <li><a href="#"><i class="nc-icon-mini business_percentage-39 text-warning" style="border-color:#ff9800;"></i> 店铺</a></li>
@@ -293,43 +288,43 @@
                     </div>
                 </li>
                 <li class="dropdown dropdown-hover">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" >
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         优惠券
                     </a>
                     <div class="dropdown-menu" style="padding: 20px; margin:0; width: 180px;">
                         <div class="row">
-                            <div >                                
+                            <div>
                                 <ul class="list-unstyled">
-                                    <li><a href="#"><i class="nc-icon-mini arrows-e_move-bottom-right text-primary" style="border-color:#0db0e5;"></i> 优惠券任务</a></li>                                    
+                                    <li><a href="#"><i class="nc-icon-mini arrows-e_move-bottom-right text-primary" style="border-color:#0db0e5;"></i> 优惠券任务</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </li>
                 <li class="dropdown dropdown-hover">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" >
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         API测试工具
                     </a>
                     <div class="dropdown-menu" style="padding: 20px; margin:0; width: 180px;">
                         <div class="row">
-                            <div >
+                            <div>
                                 <ul class="list-unstyled">
                                     <li><a href="#"><i class="nc-icon-mini arrows-e_move-bottom-right text-primary" style="border-color:#0db0e5;"></i> API调用</a></li>
                                     <li><a href="#"><i class="nc-icon-mini business_percentage-39 text-warning" style="border-color:#ff9800;"></i> CDP模块</a></li>
                                     <li><a href="#"><i class="nc-icon-mini design_eraser-46 text-info" style="border-color:#0db0e5;"></i> 活动模块</a></li>
                                     <li><a href="#"><i class="nc-icon-mini design_shape-triangle text-success" style="color: #009688;"></i> 订单模块</a></li>
-                                    <li><a href="#"><i class="nc-icon-mini design_shape-adjust text-danger"></i> 天猫积分API调用</a></li>                                    
+                                    <li><a href="#"><i class="nc-icon-mini design_shape-adjust text-danger"></i> 天猫积分API调用</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </li>
                 <li><a href="#">品牌中心</a></li>
-                <li><a href="#">批量导入任务</a></li>                
+                <li><a href="#">批量导入任务</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#"><i class="nc-icon-outline ui-1_zoom lg"></i></a></li>
-                <li><a href="#"><i class="nc-icon-outline ui-1_email-84 lg"></i><i class="nc-icon-glyph media-1_button-record text-danger" style="top: 8px;right:0px; position: absolute;"></i></a></li>
+                <!--<li><a href="#"><i class="nc-icon-outline ui-1_email-84 lg"></i><i class="nc-icon-glyph media-1_button-record text-danger" style="top: 8px;right:0px; position: absolute;"></i></a></li>-->
                 <li><a href="#"><i class="nc-icon-outline ui-1_settings-gear-63 lg"></i></a></li>
 
                 <li class="dropdown">
@@ -859,6 +854,19 @@
         });
 
     </script>
+
+    <!--<script type="text/javascript">
+    $(document).ready(function() { 
+        $('#nav li').hover(function() {
+            $('ul', this).slideDown(200);
+            $(this).children('a:first').addClass("hov");
+        }, function() {
+            $('ul', this).slideUp(100);
+            $(this).children('a:first').removeClass("hov");  
+        });
+    });
+    </script>-->
+
 </body>
 
 </html>
