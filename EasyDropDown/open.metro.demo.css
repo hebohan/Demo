@@ -1,0 +1,152 @@
+/* --- RESET --- */
+ul, fieldset, section{
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+section .wrapper{
+	padding: 30px;
+}
+
+.col{
+	display: inline-block;
+	vertical-align: top;
+	text-align: left;
+}
+
+.col_1{
+	width: 55%;
+}
+
+.col_2{
+	width: 45%;
+	max-width: 520px;
+	background: #333;
+	color: #ddd;
+	
+	box-shadow: inset 20px 0 20px -20px rgba(0,0,0,.6);
+}
+
+.col_2 h3,
+.col_2 strong{
+	color: #fff;
+}
+@media all and (max-width: 1040px){
+	.col,
+	.col_2,
+	.col_1{
+		display: block;
+		width: auto;
+		max-width: 100%;
+		background: #fff;
+		color: #333;
+		box-shadow: none;
+	}
+	
+	.col_2 h3,
+	.col_2 strong{
+		color: #333;
+	}
+	
+	pre.prettyprint{
+		font-size: 14px;
+		background: #333 !important;
+		padding: 12px !important;
+		border-radius: 5px !important;
+		overflow-x: scroll;
+	}
+	
+	hgroup{
+		text-align: left;
+		margin-bottom: 10px;
+	}
+}
+
+
+/* --- DEMO STYLES --- */
+
+body{
+	font-family: 'Helvetica Neue', arial, sans-serif;
+	color: #333;
+	
+	-webkit-font-smoothing: antialiased;
+}
+
+section{
+	position: relative;
+	font-size: 0.1px;
+	text-align: justify;
+}
+
+section:after{
+	content: '';
+	display: inline-block;
+	width: 100%;
+}
+
+section .wrapper{
+	padding: 30px;
+}
+
+.col{
+	display: inline-block;
+	vertical-align: top;
+	text-align: left;
+}
+
+.col_1{
+	width: 55%;
+}
+
+.col_2{
+	width: 45%;
+	max-width: 520px;
+	background: #333;
+	color: #ddd;
+	
+	box-shadow: inset 20px 0 20px -20px rgba(0,0,0,.6);
+}
+
+select,
+.dropdown{
+	/*margin-bottom: 30px;*/
+	display: inline-block;
+}
+
+.dropdown{
+	margin-right: 8px;
+}
+
+@media all and (max-width: 1040px){
+	.col,
+	.col_2,
+	.col_1{
+		display: block;
+		width: auto;
+		max-width: 100%;
+		background: #fff;
+		color: #333;
+		box-shadow: none;
+	}
+	
+	.col_2 h3,
+	.col_2 strong{
+		color: #333;
+	}
+	
+	pre.prettyprint{
+		font-size: 14px;
+		background: #333 !important;
+		padding: 12px !important;
+		border-radius: 5px !important;
+		overflow-x: scroll;
+	}
+	
+	hgroup{
+		text-align: left;
+		margin-bottom: 10px;
+	}
+}

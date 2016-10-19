@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS Sprite</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		h3{
+			display: block;
+			margin: 0;
+			padding: 0;
+		}
+		.cat{
+			width: 150px;
+			background: #f8f8f8;
+			border: 1px solid #bbb;
+		}
+		ul{
+			list-style: none;
+		}
+		li{
+			display: block;
+			height: 31px;
+			line-height: 31px;
+			overflow: hidden;
+			border-bottom: 1px solid #dedede;
+		}
+		li h3{
+			font-size: 14px;
+			font-weight: 400;
+		}
+		li i{
+			display: inline;
+			float: left;
+			margin: 3px 10px 0 0;
+			/*height: 24px;
+			width: 30px;
+			background: url(http://img.mukewang.com/539a950e00015ba500710200.jpg);*/
+			height: 17px;
+			width: 17px;
+			background: url(./images/sidebar-menu-ico.png);
+		}
+		.cat-1 i{
+			/*background-position: 0 0px;*/
+			background-position: 0 0;
+		}
+		.cat-2 i{
+			/*background-position: 0 -24px;*/
+			background-position: 17px 0;
+		}
+		.cat-3 i{
+			background-position: 0 -48px;
+		}
+		.cat-4 i{
+			background-position: 0 -72px;
+		}
+		.cat-5 i{
+			background-position: 0 -96px;
+		}
+		.cat-6 i{
+			background-position: 0 -120px;
+		}
+		.cat-7 i{
+			background-position: 0 -144px;
+		}
+		.cat-8 i{
+			background-position: 0 0px;
+		}
+	</style>
+</head>
+<body>
+	<div class="cat" style="background-color:#000;">
+		<ul>
+			<li class="cat-1">
+				<i></i>
+				<h3>服装内衣</h3>
+			</li>
+			<li class="cat-2">
+				<i></i>
+				<h3>鞋包配饰</h3>
+			</li>
+			<li class="cat-3">
+				<i></i>
+				<h3>运动户外</h3>
+			</li>
+			<li class="cat-4">
+				<i></i>
+				<h3>珠宝手表</h3>
+			</li>
+			<li class="cat-5">
+				<i></i>
+				<h3>手机数码</h3>
+			</li>
+			<li class="cat-6">
+				<i></i>
+				<h3>家电办公</h3>
+			</li>
+			<li class="cat-7">
+				<i></i>
+				<h3>护肤彩妆</h3>
+			</li>
+			<li class="cat-8">
+				<i></i>
+				<h3>母婴用品</h3>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

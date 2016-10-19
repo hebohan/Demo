@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Particles</title>
+</head>
+<body style="background-color: #444;">
+	<div id="canvas-particle"></div>
+	<script type="text/javascript">
+		window.onload = function(){
+			var config = {
+				div_id: "canvas-particle",
+				vx: 5,
+				vy:  5,
+				height: 2,
+				width: 2,
+				count: 200,
+				color: "255, 255, 255",
+				stroke: "255,255,255",
+				dist: 6000,
+				e_dist: 0,
+				max_conn: 10,
+				is_mouse: false
+			}
+			CanvasParticle("canvas-particle", config);
+		}
+	</script>
+	<script type="text/javascript" src="canvas-particle.js"></script>
+</body>
+</html>

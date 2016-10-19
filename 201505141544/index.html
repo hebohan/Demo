@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>jQuery和CSS3响应式多用途多级下拉菜单插件|DEMO_jQuery之家-自由分享jQuery、html5、css3的插件库</title>
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+	
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<header>
+		<div class="cd-dropdown-wrapper">
+			<a class="cd-dropdown-trigger" href="#0">Dropdown</a>
+			<nav class="cd-dropdown">
+				<h2>Title</h2>
+				<a href="#0" class="cd-close">Close</a>
+				<ul class="cd-dropdown-content">
+					<li>
+						<form class="cd-search">
+							<input type="search" placeholder="Search...">
+						</form>
+					</li>
+					<li class="has-children">
+						<a href="http://www.htmleaf.com/" target="_blank">Clothing</a>
+
+						<ul class="cd-secondary-dropdown is-hidden">
+							<li class="go-back"><a href="#0">Menu</a></li>
+							<li class="see-all"><a href="http://www.htmleaf.com/" target="_blank">All Clothing</a></li>
+							<li class="has-children">
+								<a href="http://www.htmleaf.com/" target="_blank">Accessories</a>
+
+								<ul class="is-hidden">
+									<li class="go-back"><a href="#0">Clothing</a></li>
+									<li class="see-all"><a href="http://www.htmleaf.com/" target="_blank">All Accessories</a></li>
+									<li class="has-children">
+										<a href="#0">Beanies</a>
+
+										<ul class="is-hidden">
+											<li class="go-back"><a href="#0">Accessories</a></li>
+											<li class="see-all"><a href="http://www.htmleaf.com/" target="_blank">All Benies</a></li>
+											<li><a href="http://www.htmleaf.com/" target="_blank">Caps &amp; Hats</a></li>
+											<li><a href="http://www.htmleaf.com/" target="_blank">Gifts</a></li>
+											<li><a href="http://www.htmleaf.com/" target="_blank">Scarves &amp; Snoods</a></li>
+										</ul>
+									</li>
+									<li class="has-children">
+										<a href="#0">Caps &amp; Hats</a>
+
+										<ul class="is-hidden">
+											<li class="go-back"><a href="#0">Accessories</a></li>
+											<li class="see-all"><a href="http://www.htmleaf.com/" target="_blank">All Caps &amp; Hats</a></li>
+											<li><a href="http://www.htmleaf.com/" target="_blank">Beanies</a></li>
+											<li><a href="http://www.htmleaf.com/" target="_blank">Caps</a></li>
+											<li><a href="http://www.htmleaf.com/" target="_blank">Hats</a></li>
+										</ul>
+									</li>
+									<li><a href="http://www.htmleaf.com/" target="_blank">Glasses</a></li>
+									<li><a href="http://www.htmleaf.com/" target="_blank">Gloves</a></li>
+									<li><a href="http://www.htmleaf.com/" target="_blank">Jewellery</a></li>
+									<li><a href="http://www.htmleaf.com/" target="_blank">Scarves</a></li>
+								</ul>
+							</li>
+
+							<li class="has-children">
+								<a href="http://www.htmleaf.com/" target="_blank">Bottoms</a>
+
+								<ul class="is-hidden">
+									<li class="go-back"><a href="#0">Clothing</a></li>
+									<li class="see-all"><a href="http://www.htmleaf.com/" target="_blank">All Bottoms</a></li>
+									<li><a href="http://www.htmleaf.com/" target="_blank">Casual Trousers</a></li>
+									<li class="has-children">
+										<a href="#0">Jeans</a>
+
+										<ul class="is-hidden">
+											<li class="go-back"><a href="#0">Bottoms</a></li>
+											<li class="see-all"><a href="http://www.htmleaf.com/" target="_blank">All Jeans</a></li>
+											<li><a href="http://www.htmleaf.com/" target="_blank">Ripped</a></li>
+											<li><a href="http://www.htmleaf.com/" target="_blank">Skinny</a></li>
+											<li><a href="http://www.htmleaf.com/" target="_blank">Slim</a></li>
+											<li><a href="http://www.htmleaf.com/" target="_blank">Straight</a></li>
+										</ul>
+									</li>
+									<li><a href="#0">Leggings</a></li>
+									<li><a href="#0">Shorts</a></li>
+								</ul>
+							</li>
+
+							<li class="has-children">
+								<a href="http://www.htmleaf.com/" target="_blank">Jackets</a>
+
+								<ul class="is-hidden">
+									<li class="go-back"><a href="#0">Clothing</a></li>
+									<li class="see-all"><a href="http://www.htmleaf.com/" target="_blank">All Jackets</a></li>
+									<li><a href="http://www.htmleaf.com/" target="_blank">Blazers</a></li>
+									<li><a href="http://www.htmleaf.com/" target="_blank">Bomber jackets</a></li>
+									<li><a href="http://www.htmleaf.com/" target="_blank">Denim Jackets</a></li>
+									<li><a href="http://www.htmleaf.com/" target="_blank">Duffle Coats</a></li>
+									<li><a href="http://www.htmleaf.com/" target="_blank">Leather Jackets</a></li>
+									<li><a href="http://www.htmleaf.com/" target="_blank">Parkas</a></li>
+								</ul>
+							</li>
+
+							<li class="has-children">
+								<a href="http://www.htmleaf.com/" target="_blank">Tops</a>
+
+								<ul class="is-hidden">
+									<li class="go-back"><a href="#0">Clothing</a></li>
+									<li class="see-all"><a href="http://www.htmleaf.com/" target="_blank">All Tops</a></li>
+									<li><a href="http://www.htmleaf.com/" target="_blank">Cardigans</a></li>
+									<li><a href="http://www.htmleaf.com/" target="_blank">Coats</a></li>
+									<li><a href="http://www.htmleaf.com/" target="_blank">Polo Shirts</a></li>
+									<li><a href="http://www.htmleaf.com/" target="_blank">Shirts</a></li>
+									<li class="has-children">
+										<a href="#0">T-Shirts</a>
+
+										<ul class="is-hidden">
+											<li class="go-back"><a href="#0">Tops</a></li>
+											<li class="see-all"><a href="http://www.htmleaf.com/" target="_blank">All T-shirts</a></li>
+											<li><a href="http://www.htmleaf.com/" target="_blank">Plain</a></li>
+											<li><a href="http://www.htmleaf.com/" target="_blank">Print</a></li>
+											<li><a href="http://www.htmleaf.com/" target="_blank">Striped</a></li>
+											<li><a href="http://www.htmleaf.com/" target="_blank">Long sleeved</a></li>
+										</ul>
+									</li>
+									<li><a href="http://www.htmleaf.com/" target="_blank">Vests</a></li>
+								</ul>
+							</li>
+						</ul> <!-- .cd-secondary-dropdown -->
+					</li> <!-- .has-children -->
+
+					<li class="has-children">
+						<a href="http://www.htmleaf.com/" target="_blank">Gallery</a>
+
+						<ul class="cd-dropdown-gallery is-hidden">
+							<li class="go-back"><a href="#0">Menu</a></li>
+							<li class="see-all"><a href="http://www.htmleaf.com/" target="_blank">Browse Gallery</a></li>
+							<li>
+								<a class="cd-dropdown-item" href="http://www.htmleaf.com/" target="_blank">
+									<img src="img/img.png" alt="Product Image">
+									<h3>Product #1</h3>
+								</a>
+							</li>
+
+							<li>
+								<a class="cd-dropdown-item" href="http://www.htmleaf.com/" target="_blank">
+									<img src="img/img.png" alt="Product Image">
+									<h3>Product #2</h3>
+								</a>
+							</li>
+
+							<li>
+								<a class="cd-dropdown-item" href="http://www.htmleaf.com/" target="_blank">
+									<img src="img/img.png" alt="Product Image">
+									<h3>Product #3</h3>
+								</a>
+							</li>
+
+							<li>
+								<a class="cd-dropdown-item" href="http://www.htmleaf.com/" target="_blank">
+									<img src="img/img.png" alt="Product Image">
+									<h3>Product #4</h3>
+								</a>
+							</li>
+						</ul> <!-- .cd-dropdown-gallery -->
+					</li> <!-- .has-children -->
+
+					<li class="has-children">
+						<a href="http://www.htmleaf.com/" target="_blank">Services</a>
+						<ul class="cd-dropdown-icons is-hidden">
+							<li class="go-back"><a href="#0">Menu</a></li>
+							<li class="see-all"><a href="http://www.htmleaf.com/" target="_blank">Browse Services</a></li>
+							<li>
+								<a class="cd-dropdown-item item-1" href="http://www.htmleaf.com/" target="_blank">
+									<h3>Service #1</h3>
+									<p>This is the item description</p>
+								</a>
+							</li>
+
+							<li>
+								<a class="cd-dropdown-item item-2" href="http://www.htmleaf.com/" target="_blank">
+									<h3>Service #2</h3>
+									<p>This is the item description</p>
+								</a>
+							</li>
+
+							<li>
+								<a class="cd-dropdown-item item-3" href="http://www.htmleaf.com/" target="_blank">
+									<h3>Service #3</h3>
+									<p>This is the item description</p>
+								</a>
+							</li>
+
+							<li>
+								<a class="cd-dropdown-item item-4" href="http://www.htmleaf.com/" target="_blank">
+									<h3>Service #4</h3>
+									<p>This is the item description</p>
+								</a>
+							</li>
+
+							<li>
+								<a class="cd-dropdown-item item-5" href="http://www.htmleaf.com/" target="_blank">
+									<h3>Service #5</h3>
+									<p>This is the item description</p>
+								</a>
+							</li>
+
+							<li>
+								<a class="cd-dropdown-item item-6" href="http://www.htmleaf.com/" target="_blank">
+									<h3>Service #6</h3>
+									<p>This is the item description</p>
+								</a>
+							</li>
+
+							<li>
+								<a class="cd-dropdown-item item-7" href="http://www.htmleaf.com/" target="_blank">
+									<h3>Service #7</h3>
+									<p>This is the item description</p>
+								</a>
+							</li>
+
+							<li>
+								<a class="cd-dropdown-item item-8" href="http://www.htmleaf.com/" target="_blank">
+									<h3>Service #8</h3>
+									<p>This is the item description</p>
+								</a>
+							</li>
+
+							<li>
+								<a class="cd-dropdown-item item-9" href="http://www.htmleaf.com/" target="_blank">
+									<h3>Service #9</h3>
+									<p>This is the item description</p>
+								</a>
+							</li>
+
+							<li>
+								<a class="cd-dropdown-item item-10" href="http://www.htmleaf.com/" target="_blank">
+									<h3>Service #10</h3>
+									<p>This is the item description</p>
+								</a>
+							</li>
+
+							<li>
+								<a class="cd-dropdown-item item-11" href="http://www.htmleaf.com/" target="_blank">
+									<h3>Service #11</h3>
+									<p>This is the item description</p>
+								</a>
+							</li>
+
+							<li>
+								<a class="cd-dropdown-item item-12" href="http://www.htmleaf.com/" target="_blank">
+									<h3>Service #12</h3>
+									<p>This is the item description</p>
+								</a>
+							</li>
+
+						</ul> <!-- .cd-dropdown-icons -->
+					</li> <!-- .has-children -->
+
+					<li class="cd-divider">Divider</li>
+
+					<li><a href="http://www.htmleaf.com/" target="_blank">Page 1</a></li>
+					<li><a href="http://www.htmleaf.com/" target="_blank">Page 2</a></li>
+					<li><a href="http://www.htmleaf.com/" target="_blank">Page 3</a></li>
+				</ul> <!-- .cd-dropdown-content -->
+			</nav> <!-- .cd-dropdown -->
+		</div> <!-- .cd-dropdown-wrapper -->
+	</header>
+	<main class="cd-main-content">
+		<!-- your content here -->
+		<header class="htmleaf-header">
+			<h1>jQuery和CSS3响应式多用途多级下拉菜单插件 <span>A responsive and easy to customise mega-dropdown component.</span></h1>
+			<div class="htmleaf-links">
+				<a class="htmleaf-icon icon-htmleaf-home-outline" href="http://www.htmleaf.com/" title="jQuery之家" target="_blank"><span> jQuery之家</span></a>
+				<a class="htmleaf-icon icon-htmleaf-arrow-forward-outline" href="http://www.htmleaf.com/jQuery/Menu-Navigation/201505141829.html" title="返回下载页" target="_blank"><span> 返回下载页</span></a>
+			</div>
+		</header>
+		<div class="htmleaf-content bgcolor-3">
+
+		</div>
+		<div class="related">
+		    <h3>如果你喜欢这个插件，那么你可能也喜欢:</h3>
+		    <a href="http://www.htmleaf.com/jQuery/Menu-Navigation/201505101809.html">
+			  <img src="related/1.jpg" width="300" alt="jQuery高仿真移动手机滑动侧边栏布局插件"/>
+			  <h3>jQuery高仿真移动手机滑动侧边栏布局插件</h3>
+			</a>
+			<a href="http://www.htmleaf.com/jQuery/Menu-Navigation/201504111659.html">
+			  <img src="related/2.jpg" width="300" alt="jQuery和CSS3超酷3D页面切换导航菜单插件"/>
+			  <h3>jQuery和CSS3超酷3D页面切换导航菜单插件</h3>
+			</a>
+		</div>
+	</main>
+	
+	
+	<script src="js/jquery-2.1.1.js"></script>
+	<script src="js/main.js"></script> <!-- Resource jQuery -->
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="./echarts/echarts.js"></script>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 100%;height:600px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var base = +new Date(2016, 3, 22, 0, 0, 0);
+        var oneSeconds = 1000;
+        var date = [];
+
+        var data1 = [Math.random() * 100];
+        var data2 = [Math.random() * 100];
+
+        for (var i = 1; i < 3600; i++) {
+            var now = new Date(base += oneSeconds);
+            date.push([now.getFullYear()+"-"+ now.getMonth()+"-"+now.getDate()+" "+now.getHours()+":"+ now.getMinutes()+":"+now.getSeconds()]);
+            //console.log(date[i-1]);
+            data1.push(Math.round((Math.random() - 0.5) * 20 + data1[i - 1]));
+            data2.push(Math.round((Math.random() - 0.5) * 20 + data2[i - 1]));
+        }    
+
+        option = {
+        	title: {
+        		text: 'Anscombe\'s quartet',
+        		x: 'center',
+        		y: 0
+        	},
+        	grid: [
+        	{x: '7%', y: '7%', width: '84%', height: '38%'},        	
+        	{x: '7%', y2: '7%', width: '84%', height: '38%'}
+        	],
+        	tooltip: {
+        		formatter: 'Group {a}: ({c})'
+        	},
+        	xAxis: [
+	        	{
+	        		gridIndex: 0,
+	                type: 'category',
+	                boundaryGap: false,
+	                data: date
+	            },
+	        	{
+	        		gridIndex: 1,
+	                type: 'category',
+	                boundaryGap: false,
+	                data: date
+	            }        	
+        	],
+        	yAxis: [
+        	{
+        		gridIndex: 0,
+                type: 'value',
+                boundaryGap: [0, '100%']
+            },
+        	{
+        		gridIndex: 1,
+                type: 'value',
+                boundaryGap: [1, '100%']
+            }
+        	],
+        	dataZoom: [{
+                type: 'inside',
+                start: 0,
+                end: 10
+            }, {
+                start: 0,
+                end: 10
+            }],
+        	series: [
+        	{
+        		name: 'I',
+        		type: 'line',
+        		xAxisIndex: [0],
+        		yAxisIndex: [0],
+        		data: data1
+        	},
+        	{
+        		name: 'II',
+        		type: 'line',
+        		xAxisIndex: [1],
+        		yAxisIndex: [1],
+        		data: data2
+        	}        	
+        	]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+</body>
+</html>

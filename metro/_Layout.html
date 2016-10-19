@@ -47,7 +47,11 @@
     .list-unstyled > li > a {
         color: #666;
         display: block;
-        padding: 10px 5px;
+        padding: 0 5px 10px 5px;
+    }
+    
+    .list-unstyled > li:first-child > a {
+        padding-top: 10px;
     }
     
     .panel {
@@ -245,6 +249,40 @@
     .v4-nav-pills-1 .f-s-48 {
         /*        font-size: 32px*/
     }
+    
+    .dropdown-menu {
+        padding: 0 0 0 20px;
+        margin: 0;
+        width: 180px;
+    }
+    
+    .navbar-nav .dropdown-hover .dropdown-menu li a {
+        transition: margin-left 0.2s;
+        -moz-transition: margin-left 0.2s;
+        /* Firefox 4 */
+        -webkit-transition: margin-left 0.2s;
+        /* Safari and Chrome */
+        -o-transition: margin-left 0.2s;
+        /* Opera */
+    }
+    
+    .navbar-nav .dropdown-hover .dropdown-menu li a:hover {
+        margin-left: 20px;
+    }
+    
+    .navbar-nav>li>a {
+        transition: background-color 1s;
+        -moz-transition: background-color 1s;
+        /* Firefox 4 */
+        -webkit-transition: background-color 1s;
+        /* Safari and Chrome */
+        -o-transition: background-color 1s;
+        /* Opera */
+    }
+    
+    .navbar-nav>li>a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
 </style>
 
 <body class="js-scroll" style="background: #444; background-attachment: fixed;">
@@ -262,21 +300,25 @@
                 <li><a href="#">应用</a></li>
                 <li><a href="#">IP白名单</a></li>
                 <li class="dropdown dropdown-hover">
-                    <a class="dropdown-toggle site" data-toggle="dropdown" href="#">                        
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">                        
                        授权
                     </a>
-                    <div class="dropdown-menu" style="padding: 20px; margin:0; width: 180px;">
-                        <ul class="list-unstyled">
-                            <li><a href="#"><i class="nc-icon-mini arrows-e_move-bottom-right text-primary" style="border-color:#0db0e5;"></i> 授权信息</a></li>
-                            <li><a href="#"><i class="nc-icon-mini business_percentage-39 text-warning" style="border-color:#ff9800;"></i> 授权码</a></li>
-                        </ul>
+                    <div class="dropdown-menu">
+                        <div class="row">
+                            <div>
+                                <ul class="list-unstyled">
+                                    <li><a href="#"><i class="nc-icon-mini arrows-e_move-bottom-right text-primary" style="border-color:#0db0e5;"></i> 授权信息</a></li>
+                                    <li><a href="#"><i class="nc-icon-mini business_percentage-39 text-warning" style="border-color:#ff9800;"></i> 授权码</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </li>
                 <li class="dropdown dropdown-hover">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         基本信息
                     </a>
-                    <div class="dropdown-menu" style="padding: 20px; margin:0; width: 180px;">
+                    <div class="dropdown-menu">
                         <div class="row">
                             <div>
                                 <ul class="list-unstyled">
@@ -291,7 +333,7 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         优惠券
                     </a>
-                    <div class="dropdown-menu" style="padding: 20px; margin:0; width: 180px;">
+                    <div class="dropdown-menu">
                         <div class="row">
                             <div>
                                 <ul class="list-unstyled">
@@ -305,7 +347,7 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         API测试工具
                     </a>
-                    <div class="dropdown-menu" style="padding: 20px; margin:0; width: 180px;">
+                    <div class="dropdown-menu">
                         <div class="row">
                             <div>
                                 <ul class="list-unstyled">
@@ -349,6 +391,26 @@
     <script src="http://cdn.bootcss.com/particles.js/1.1.0/particles.min.js"></script>
     <script src="http://cdn.bootcss.com/jquery.nicescroll/3.6.6/jquery.nicescroll.min.js"></script>
     <script src="http://cdn.bootcss.com/highcharts/4.2.3/highcharts.js"></script>
+    <script type="text/javascript">
+    var dropdownTid;
+    $(document).ready(function(){
+        $("li.dropdown").hover(function () {
+            //$(this).addClass("open");
+            var that = $(this);
+            dropdownTid = setTimeout(function(){
+                that.children(".dropdown-menu").slideDown(200);   
+            }, 100);
+
+        }, function () {
+            //$(this).removeClass("open");
+            $(this).children(".dropdown-menu").slideUp(200);
+        });
+
+        $("li.dropdown").mouseleave(function(){            
+            clearTimeout(dropdownTid); 
+        });
+    });
+    </script>
     <script>
         var g = new JustGage({
             id: "g1",

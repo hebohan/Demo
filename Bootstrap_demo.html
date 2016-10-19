@@ -1,0 +1,926 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Bootstrap-Dome</title>
+		<link rel="stylesheet" href="./css/github.css">
+	    <!--<link rel="stylesheet" href="./css/bootstrap.css">-->
+        <link rel="stylesheet" href="./bootstrap-2.3.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="./css/docs.min.css">
+		<style type="text/css">
+		    /* Custom Styles */
+		    #myScrollspy>ul.nav-tabs{
+		        width: 200px;
+		        margin-top: 20px;
+		        border-radius: 4px;
+		        border: 1px solid #ddd;
+		        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+		    }
+		    #myScrollspy>ul.nav-tabs li{
+		        margin: 0;
+		        border-top: 1px solid #ddd;
+		    }
+		    #myScrollspy>ul.nav-tabs li:first-child{
+		        border-top: none;
+		    }
+		    #myScrollspy>ul.nav-tabs li a{
+		        margin: 0;
+		        padding: 8px 16px;
+		        border-radius: 0;
+		    }
+		    #myScrollspy>ul.nav-tabs li.active a, ul.nav-tabs li.active a:hover{
+		        color: #fff;
+		        background: #0088cc;
+		        border: 1px solid #0088cc;
+		    }
+		    #myScrollspy>ul.nav-tabs li:first-child a{
+		        border-radius: 4px 4px 0 0;
+		    }
+		    #myScrollspy>ul.nav-tabs li:last-child a{
+		        border-radius: 0 0 4px 4px;
+		    }
+		    #myScrollspy>ul.nav-tabs.affix{
+		        top: 90px; /* Set the top position of pinned element */
+		    }
+		</style>
+	</head>
+	<body data-spy="scroll" data-target="#myScrollspy" onload="prettyPrint()">
+		<script src="./js/jquery-1.10.2.js"></script>
+		<!--<script src="./js/bootstrap.js"></script>--> 
+        <script src="./bootstrap-2.3.1/js/bootstrap.min.js"></script>
+		<script src="./js/prettify.js"></script>
+
+		<div style="background-color:#6f5499;height:220px;line-height:220px;text-align:center;"><p style="font-size:70px;color:white;">Bootstrap Dome</p></div>
+        <div class=" container body-content">
+            <div class="col-xs-3" id="myScrollspy">
+                <ul class="nav nav-tabs nav-stacked" data-spy="affix" data-offset-top="125"><!--data-offset-top="125"-->
+                    <li class="active"><a href="#section-1">模态框(Modal)</a></li>
+                    <li><a href="#section-2">固定定位(Affix)</a></li>
+                    <li><a href="#section-3">下拉菜单(Dropdown)</a></li>
+                    <li><a href="#section-4">选项卡(Tabs)</a></li>
+                    <li><a href="#section-5">提示框(Tooltip)</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-9">
+                <div>
+                    <h3 id="section-1">模态框(Modal)</h3>
+                    <h4>实例一</h4>
+                    <p>点击按钮通过data-target触发模态框</p>
+                    <div class="text-center bs-example">
+                      <!-- data-target触发模态弹出窗元素 -->
+                      <button class="btn btn-primary" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#mymodal-data" type="button">通过data-target触发</button>
+                      <!-- 模态弹出窗内容 -->
+                      <div class="modal fade" id="mymodal-data" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                              <h4 class="modal-title">模态弹出窗标题</h4>
+                            </div>
+                            <div class="modal-body">
+                              <!-- <p>模态弹出窗主体内容</p> -->
+                              <table class="table table-striped table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>店铺名称</th>
+                                        <th>待处理订单数</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                aaa0
+                                            </td>
+                                            <td>
+                                                0
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa1
+                                            </td>
+                                            <td>
+                                                123
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa2
+                                            </td>
+                                            <td>
+                                                246
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa3
+                                            </td>
+                                            <td>
+                                                369
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa4
+                                            </td>
+                                            <td>
+                                                492
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa5
+                                            </td>
+                                            <td>
+                                                615
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa6
+                                            </td>
+                                            <td>
+                                                738
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa7
+                                            </td>
+                                            <td>
+                                                861
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa8
+                                            </td>
+                                            <td>
+                                                984
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa9
+                                            </td>
+                                            <td>
+                                                1107
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa10
+                                            </td>
+                                            <td>
+                                                1230
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa11
+                                            </td>
+                                            <td>
+                                                1353
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa12
+                                            </td>
+                                            <td>
+                                                1476
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa13
+                                            </td>
+                                            <td>
+                                                1599
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa14
+                                            </td>
+                                            <td>
+                                                1722
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa15
+                                            </td>
+                                            <td>
+                                                1845
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa16
+                                            </td>
+                                            <td>
+                                                1968
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa17
+                                            </td>
+                                            <td>
+                                                2091
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa18
+                                            </td>
+                                            <td>
+                                                2214
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa19
+                                            </td>
+                                            <td>
+                                                2337
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa20
+                                            </td>
+                                            <td>
+                                                2460
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa21
+                                            </td>
+                                            <td>
+                                                2583
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa22
+                                            </td>
+                                            <td>
+                                                2706
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa23
+                                            </td>
+                                            <td>
+                                                2829
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa24
+                                            </td>
+                                            <td>
+                                                2952
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa25
+                                            </td>
+                                            <td>
+                                                3075
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa26
+                                            </td>
+                                            <td>
+                                                3198
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa27
+                                            </td>
+                                            <td>
+                                                3321
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa28
+                                            </td>
+                                            <td>
+                                                3444
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa29
+                                            </td>
+                                            <td>
+                                                3567
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa30
+                                            </td>
+                                            <td>
+                                                3690
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa31
+                                            </td>
+                                            <td>
+                                                3813
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa32
+                                            </td>
+                                            <td>
+                                                3936
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa33
+                                            </td>
+                                            <td>
+                                                4059
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa34
+                                            </td>
+                                            <td>
+                                                4182
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa35
+                                            </td>
+                                            <td>
+                                                4305
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa36
+                                            </td>
+                                            <td>
+                                                4428
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa37
+                                            </td>
+                                            <td>
+                                                4551
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa38
+                                            </td>
+                                            <td>
+                                                4674
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa39
+                                            </td>
+                                            <td>
+                                                4797
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa40
+                                            </td>
+                                            <td>
+                                                4920
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa41
+                                            </td>
+                                            <td>
+                                                5043
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa42
+                                            </td>
+                                            <td>
+                                                5166
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa43
+                                            </td>
+                                            <td>
+                                                5289
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa44
+                                            </td>
+                                            <td>
+                                                5412
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa45
+                                            </td>
+                                            <td>
+                                                5535
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa46
+                                            </td>
+                                            <td>
+                                                5658
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa47
+                                            </td>
+                                            <td>
+                                                5781
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa48
+                                            </td>
+                                            <td>
+                                                5904
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                aaa49
+                                            </td>
+                                            <td>
+                                                6027
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                              <button type="button" class="btn btn-primary">保存</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="highlight">
+                      <pre  class="prettyprint">
+                        <code>
+    &lt;!-- data-target触发模态弹出窗元素 --&gt;
+    &lt;button class="btn btn-primary" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#mymodal-data" type="button"&gt;通过data-target触发&lt;/button&gt;
+    &lt;!-- 模态弹出窗内容 --&gt;
+    &lt;div class="modal fade" id="mymodal-data" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"&gt;
+        &lt;div class="modal-dialog"&gt;
+        &lt;div class="modal-content"&gt;
+          &lt;div class="modal-header"&gt;
+            &lt;button type="button" class="close" data-dismiss="modal"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;span class="sr-only"&gt;Close&lt;/span&gt;&lt;/button&gt;
+            &lt;h4 class="modal-title"&gt;模态弹出窗标题&lt;/h4&gt;
+          &lt;/div&gt;
+          &lt;div class="modal-body"&gt;
+            &lt;p&gt;模态弹出窗主体内容&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="modal-footer"&gt;
+            &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;关闭&lt;/button&gt;
+            &lt;button type="button" class="btn btn-primary"&gt;保存&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+                        </code>
+                      </pre>
+                    </div>    
+                    <h4>实例二</h4>
+                    <p>点击按钮通过JavaScript触发模态框</p>
+                    <div class="bs-example text-center">
+                        <button class="jbtn btn btn-primary" type="button">通过JavaScript触发</button>
+                        <div class="modal fade" id="themodal"  tabindex="-1">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                        <h4 class="modal-title">模态弹出窗标题</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>模态弹出窗主体内容</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="jbtn btn btn-default" data-dismiss="modal">关闭</button>
+                                        <button type="button" class="jbtn btn btn-primary">保存</button>
+                                    </div>
+                                </div><!-- /.modal-content -->
+                            </div><!-- /.modal-dialog -->
+                        </div><!-- /.modal -->
+                        <script>
+                            $(function(){
+                              $(".jbtn").click(function(){
+                                $("#themodal").modal();
+                              });
+                            });
+                        </script>
+                    </div>
+                    <div class="highlight">
+                        <pre  class="prettyprint">
+                            <code>
+    &lt;button class="btn btn-primary" type="button"&gt;通过JavaScript触发&lt;/button&gt;
+    &lt;div class="modal" id="themodal"  tabindex="-1"&gt;
+        &lt;div class="modal-dialog"&gt;
+            &lt;div class="modal-content"&gt;
+                &lt;div class="modal-header"&gt;
+                    &lt;button type="button" class="close" data-dismiss="modal"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;span class="sr-only"&gt;Close&lt;/span&gt;&lt;/button&gt;
+                    &lt;h4 class="modal-title"&gt;模态弹出窗标题&lt;/h4&gt;
+                &lt;/div&gt;
+                &lt;div class="modal-body"&gt;
+                    &lt;p&gt;模态弹出窗主体内容&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="modal-footer"&gt;
+                    &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;关闭&lt;/button&gt;
+                    &lt;button type="button" class="btn btn-primary"&gt;保存&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;&lt;!-- /.modal-content --&gt;
+        &lt;/div&gt;&lt;!-- /.modal-dialog --&gt;
+    &lt;/div&gt;&lt;!-- /.modal --&gt;
+                            </code>
+                        </pre>
+                    </div>
+                    <p>JavaScript</p>
+                    <div class="highlight">
+                        <pre  class="prettyprint">
+                            <code>
+    $(function(){
+      $(".btn").click(function(){
+        $("#themodal").modal();
+      });
+    });
+                            </code>
+                        </pre>
+                    </div>
+                </div><!--模态框(Modal)-->
+                <div>
+                    <h3 id="section-2">固定定位（Affix）</h3>
+                    <p></p>
+                    <div class="bs-example text-center">
+                    	<p style="color:#ccc;">左侧固定式导航</p>
+                    </div>
+                    <p>css</p>
+                    <div class="highlight">
+                        <pre  class="prettyprint">
+                            <code>
+    ul.nav-tabs{
+	    width: 140px;
+	    margin-top: 20px;
+	    border-radius: 4px;
+	    border: 1px solid #ddd;
+	    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+	}
+	ul.nav-tabs li{
+	    margin: 0;
+	    border-top: 1px solid #ddd;
+	}
+	ul.nav-tabs li:first-child{
+	    border-top: none;
+	}
+	ul.nav-tabs li a{
+	    margin: 0;
+	    padding: 8px 16px;
+	    border-radius: 0;
+	}
+	ul.nav-tabs li.active a, ul.nav-tabs li.active a:hover{
+	    color: #fff;
+	    background: #0088cc;
+	    border: 1px solid #0088cc;
+	}
+	ul.nav-tabs li:first-child a{
+	    border-radius: 4px 4px 0 0;
+	}
+	ul.nav-tabs li:last-child a{
+	    border-radius: 0 0 4px 4px;
+	}
+	ul.nav-tabs.affix{
+	    top: 30px; /* Set the top position of pinned element */
+	}
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="highlight">
+                        <pre  class="prettyprint">
+                            <code>
+    &lt;div class="col-xs-3" id="myScrollspy"&gt;
+        &lt;ul class="nav nav-tabs nav-stacked" data-spy="affix" data-offset-top="125"&gt;
+            &lt;li class="active"&gt;&lt;a href="#section-1"&gt;第一部分&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section-2"&gt;第二部分&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section-3"&gt;第三部分&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section-4"&gt;第四部分&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section-5"&gt;第五部分&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;div class="col-xs-9"&gt;
+        &lt;div&gt;&lt;h3 id="section-1"&gt;第一部分&lt;/h3&gt;
+        &lt;p&gt;...&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div&gt;&lt;h3 id="section-2"&gt;第二部分&lt;/h3&gt;
+        &lt;p&gt;...&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div&gt;&lt;h3 id="section-3"&gt;第三部分&lt;/h3&gt;
+        &lt;p&gt;...&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div&gt;&lt;h3 id="section-4"&gt;第四部分&lt;/h3&gt;
+        &lt;p&gt;...&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div&gt;&lt;h3 id="section-5"&gt;第五部分&lt;/h3&gt;
+        &lt;p&gt;...&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>    
+                </div><!--固定定位(Affix)-->
+                <div>
+                    <h3 id="section-3">下拉菜单(Dropdown)</h3>
+                    <p></p>
+                    <h4>实例一</h4>
+                    <div class="bs-example text-center">
+                    	<div class="navbar navbar-default" id="navmenu">
+                            <a href="##" class="navbar-brand">W3cplus</a>
+                            <ul class="nav navbar-nav">
+                                <li class="dropdown">
+                                    <a href="##" data-toggle="dropdown" class="dropdown-toggle" role="button" id="tutorial">教程<b class="caret"></b></a>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="tutorial">
+                                        <li role="presentation"><a href="##">CSS3</a></li>
+                                        <li role="presentation"><a href="##">HTML5</a></li>
+                                        <li role="presentation"><a href="##">Sass</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="##">前端论坛</a></li>
+                                <li><a href="##">关于我们</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div  class="highlight">
+                        <pre  class="prettyprint">
+                            <code>
+    &lt;div class="navbar navbar-default" id="navmenu"&gt;
+        &lt;a href="##" class="navbar-brand"&gt;W3cplus&lt;/a&gt;
+        &lt;ul class="nav navbar-nav"&gt;
+            &lt;li class="dropdown"&gt;
+                &lt;a href="##" data-toggle="dropdown" class="dropdown-toggle" role="button" id="tutorial"&gt;教程&lt;b class="caret"&gt;&lt;/b&gt;&lt;/a&gt;
+                &lt;ul class="dropdown-menu" role="menu" aria-labelledby="tutorial"&gt;
+                    &lt;li role="presentation"&gt;&lt;a href="##"&gt;CSS3&lt;/a&gt;&lt;/li&gt;
+                    &lt;li role="presentation"&gt;&lt;a href="##"&gt;HTML5&lt;/a&gt;&lt;/li&gt;
+                    &lt;li role="presentation"&gt;&lt;a href="##"&gt;Sass&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li&gt;&lt;a href="##"&gt;前端论坛&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="##"&gt;关于我们&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+                    <h4>实例二</h4>
+                    <div class="bs-example text-center">
+                        <ul class="nav nav-pills">
+                            <li class="dropdown">
+                                <a href="##" data-toggle="dropdown" class="dropdown-toggle" role="button" id="tutorial">教程<b class="caret"></b></a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="tutorial">
+                                    <li role="presentation"><a href="##">CSS3</a></li>
+                                    <li role="presentation"><a href="##">HTML5</a></li>
+                                    <li role="presentation"><a href="##">Sass</a></li>
+                                </ul>
+                            </li>
+                            <li class="active"><a href="##">前端论坛</a></li>
+                            <li><a href="##">关于我们</a></li>
+                        </ul>
+                    </div>
+                    <div class="highlight">
+                        <pre class="prettyprint">
+                            <code>
+    &lt;div class="bs-example text-center"&gt;
+        &lt;ul class="nav nav-pills"&gt;
+            &lt;li class="dropdown"&gt;
+                &lt;a href="##" data-toggle="dropdown" class="dropdown-toggle" role="button" id="tutorial"&gt;教程&lt;b class="caret"&gt;&lt;/b&gt;&lt;/a&gt;
+                &lt;ul class="dropdown-menu" role="menu" aria-labelledby="tutorial"&gt;
+                    &lt;li role="presentation"&gt;&lt;a href="##"&gt;CSS3&lt;/a&gt;&lt;/li&gt;
+                    &lt;li role="presentation"&gt;&lt;a href="##"&gt;HTML5&lt;/a&gt;&lt;/li&gt;
+                    &lt;li role="presentation"&gt;&lt;a href="##"&gt;Sass&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li class="active"&gt;&lt;a href="##"&gt;前端论坛&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="##"&gt;关于我们&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+                </div><!--下拉菜单(Dropdown)-->
+                <div>
+                    <h3 id="section-4">选项卡(Tabs)</h3>
+                    <h4>实例一</h4>
+                    <p></p>
+                    <div class="bs-example text-center">
+                        <!-- 选项卡组件（菜单项nav-tabs）-->
+                        <ul id="myTab" class="nav nav-tabs" role="tablist">
+                            <li class="active"><a href="#bulletin" role="tab" data-toggle="tab">公告</a></li>
+                            <li><a href="#rule" role="tab" data-toggle="tab">规则</a></li>
+                            <li><a href="#forum" role="tab" data-toggle="tab">论坛</a></li>
+                            <li><a href="#security" role="tab" data-toggle="tab">安全</a></li>
+                            <li><a href="#welfare" role="tab" data-toggle="tab">公益</a></li>
+                        </ul>
+                        <!-- 选项卡面板 -->
+                        <div id="myTabContent" class="tab-content">
+                            <div class="tab-pane active" id="bulletin">公告内容面板</div>
+                            <div class="tab-pane" id="rule">规则内容面板</div>
+                            <div class="tab-pane" id="forum">论坛内容面板</div>
+                            <div class="tab-pane" id="security">安全内容面板</div>
+                            <div class="tab-pane" id="welfare">公益内容面板</div>
+                        </div>
+                    </div>
+                    <div class="highlight">
+                        <pre class="prettyprint">
+                            <code>
+	&lt;!-- 选项卡组件（菜单项nav-tabs）--&gt;
+	&lt;ul id="myTab" class="nav nav-tabs" role="tablist"&gt;
+	    &lt;li class="active"&gt;&lt;a href="#bulletin" role="tab" data-toggle="tab"&gt;公告&lt;/a&gt;&lt;/li&gt;
+	    &lt;li&gt;&lt;a href="#rule" role="tab" data-toggle="tab"&gt;规则&lt;/a&gt;&lt;/li&gt;
+	    &lt;li&gt;&lt;a href="#forum" role="tab" data-toggle="tab"&gt;论坛&lt;/a&gt;&lt;/li&gt;
+	    &lt;li&gt;&lt;a href="#security" role="tab" data-toggle="tab"&gt;安全&lt;/a&gt;&lt;/li&gt;
+	    &lt;li&gt;&lt;a href="#welfare" role="tab" data-toggle="tab"&gt;公益&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;!-- 选项卡面板 --&gt;
+	&lt;div id="myTabContent" class="tab-content"&gt;
+	    &lt;div class="tab-pane active" id="bulletin"&gt;公告内容面板&lt;/div&gt;
+	    &lt;div class="tab-pane" id="rule"&gt;规则内容面板&lt;/div&gt;
+	    &lt;div class="tab-pane" id="forum"&gt;论坛内容面板&lt;/div&gt;
+	    &lt;div class="tab-pane" id="security"&gt;安全内容面板&lt;/div&gt;
+	    &lt;div class="tab-pane" id="welfare"&gt;公益内容面板&lt;/div&gt;
+	&lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+                    <h4>实例二</h4>
+                    <p>胶囊式选项卡（nav-pills）</p>
+                    <div class="bs-example text-center">
+                        <!-- 选项卡组件（菜单项nav-pills）-->
+                        <ul id="myTab_1" class="nav nav-pills" role="tablist">
+                            <li class="active"><a href="#bulletin_1" role="tab" data-toggle="pill">公告</a></li>
+                            <li><a href="#rule_1" role="tab" data-toggle="pill">规则</a></li>
+                            <li><a href="#forum_1" role="tab" data-toggle="pill">论坛</a></li>
+                            <li><a href="#security_1" role="tab" data-toggle="pill">安全</a></li>
+                            <li><a href="#welfare_1" role="tab" data-toggle="pill">公益</a></li>
+                        </ul>
+                        <!-- 选项卡面板 -->
+                        <div id="myTabContent_1" class="tab-content">
+                            <div class="tab-pane fade in active" id="bulletin_1">公告内容面板</div>
+                            <div class="tab-pane fade" id="rule_1">规则内容面板</div>
+                            <div class="tab-pane fade" id="forum_1">论坛内容面板</div>
+                            <div class="tab-pane fade" id="security_1">安全内容面板</div>
+                            <div class="tab-pane fade" id="welfare_1">公益内容面板</div>
+                        </div>
+                    </div>
+                    <div class="highlight">
+                        <pre class="prettyprint">
+                            <code>
+&lt;!-- 选项卡组件（菜单项nav-pills）--&gt;
+&lt;ul id="myTab" class="nav nav-pills" role="tablist"&gt;
+    &lt;li class="active"&gt;&lt;a href="#bulletin" role="tab" data-toggle="pill"&gt;公告&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#rule" role="tab" data-toggle="pill"&gt;规则&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#forum" role="tab" data-toggle="pill"&gt;论坛&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#security" role="tab" data-toggle="pill"&gt;安全&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#welfare" role="tab" data-toggle="pill"&gt;公益&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- 选项卡面板 --&gt;
+&lt;div id="myTabContent" class="tab-content"&gt;
+    &lt;div class="tab-pane fade in active" id="bulletin"&gt;公告内容面板&lt;/div&gt;
+    &lt;div class="tab-pane fade" id="rule"&gt;规则内容面板&lt;/div&gt;
+    &lt;div class="tab-pane fade" id="forum"&gt;论坛内容面板&lt;/div&gt;
+    &lt;div class="tab-pane fade" id="security"&gt;安全内容面板&lt;/div&gt;
+    &lt;div class="tab-pane fade" id="welfare"&gt;公益内容面板&lt;/div&gt;
+&lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+                </div><!--提示框(Tooltip)-->
+                <div>
+                    <h3 id="section-5">提示框(Tooltip)</h3>
+                    <div id="mytooltip" class="bs-example text-center">
+                        <button type="button" 
+                                class="btn btn-default" 
+                                data-toggle="tooltip" 
+                                data-placement="left" 
+                                data-original-title="提示框居左" 
+                                title="">
+                        提示框居左      
+                        </button>
+                        <button type="button" 
+                                class="btn btn-default" 
+                                data-toggle="tooltip" 
+                                data-placement="top" 
+                                data-original-title="提示框在顶部">
+                         提示框在顶部
+                        </button>
+                        <button type="button" 
+                                class="btn btn-default" 
+                                data-toggle="tooltip" 
+                                data-placement="bottom" 
+                                data-original-title="提示框在底部">
+                        提示框在底部             
+                        </button>
+                        <button type="button" 
+                                class="btn btn-default" 
+                                data-toggle="tooltip" 
+                                data-placement="right" 
+                                data-original-title="提示框居右">
+                        提示框居右      
+                        </button>
+                        
+                        <script>
+                            $(function(){
+                                $('[data-toggle="tooltip"]').tooltip(); 
+                            })
+                        </script>
+                    </div>  
+                    <div class="highlight">
+                        <pre class="prettyprint">
+                            <code>
+    &lt;button type="button" 
+            class="btn btn-default" 
+            data-toggle="tooltip" 
+            data-placement="left" 
+            data-original-title="提示框居左" 
+            title=""&gt;
+    提示框居左      
+    &lt;/button&gt;
+    &lt;button type="button" 
+            class="btn btn-default" 
+            data-toggle="tooltip" 
+            data-placement="top" 
+            data-original-title="提示框在顶部"&gt;
+     提示框在顶部
+    &lt;/button&gt;
+    &lt;button type="button" 
+            class="btn btn-default" 
+            data-toggle="tooltip" 
+            data-placement="bottom" 
+            data-original-title="提示框在底部"&gt;
+    提示框在底部             
+    &lt;/button&gt;
+    &lt;button type="button" 
+            class="btn btn-default" 
+            data-toggle="tooltip" 
+            data-placement="right" 
+            data-original-title="提示框居右"&gt;
+    提示框居右      
+    &lt;/button&gt;
+                            </code>
+                        </pre>
+                    </div>
+                    <p>JavaScript</p>
+                    <div class="highlight">
+                        <pre class="prettyprint">
+                        	<code>
+	$(function(){
+		$('[data-toggle="tooltip"]').tooltip(); 
+	})
+                        	</code>
+                        </pre>
+                    </div>
+                </div><!--提示框(Tooltip)-->
+            </div>
+        </div>
+	</body>
+</html>
+      
