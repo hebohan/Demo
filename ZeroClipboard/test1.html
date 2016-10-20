@@ -4,29 +4,44 @@
 <head>
 	<title>Zero Clipboard Test</title>
 	<meta charset="utf-8">
+  <script src="./jquery.min.js"></script> 
 </head>
 
 <body>
 	<!-- 
-	说明：
-	1.data-clipboard-target 输入要复制的对象的ID
--->
-	<button id="d_clip_button" class="my_clip_button" data-clipboard-target="fe_text"><b>复制1</b></button>
+    说明：
+    1.data-clipboard-target 输入要复制的对象的ID
+  -->
+	<button id="d_clip_button_1" onclick="javascript:document.getElementById('fe_text').value = document.getElementById('fe_text_1').value;"><b>复制1</b></button>
 	<br/>
-	<textarea id="fe_text" cols="50" rows="3">aaaaa</textarea>
+	<textarea id="fe_text_1" cols="50" rows="3">111111</textarea>
+
+  <button id="d_clip_button_2" onclick="javascript:document.getElementById('fe_text').value = document.getElementById('fe_text_2').value;"><b>复制2</b></button>
+	<br/>
+	<textarea id="fe_text_2" cols="50" rows="3">22222222222</textarea>
+
+  <button id="d_clip_button" class="my_clip_button" data-clipboard-target="fe_text"><b>复制</b></button>
+	<br/>
+	<textarea id="fe_text" cols="50" rows="3"></textarea>
 </body>
 
 </html>
 <script type="text/javascript" src="ZeroClipboard.js"></script>
 <script type="text/javascript">
-// 定义一个新的复制对象
-var clip = new ZeroClipboard( document.getElementById("d_clip_button"), {
-  moviePath: "ZeroClipboard.swf"
-} );
+ $(function(){
+   $("#d_clip_button_1").click(function() 
+    { 
+      $("#d_clip_button").click();
+    });
+ })
+  // 定义一个新的复制对象
+  var clip = new ZeroClipboard( document.getElementById("d_clip_button"), {
+    moviePath: "ZeroClipboard.swf"
+  } );
 
-// 复制内容到剪贴板成功后的操作
-clip.on( 'complete', function(client, args) {
-   alert("复制成功，复制内容为："+ args.text);
-} );
+  // 复制内容到剪贴板成功后的操作
+  clip.on( 'complete', function(client, args) {
+    alert("复制成功，复制内容为："+ args.text);
+  } );
 
 </script>
