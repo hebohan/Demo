@@ -1,0 +1,307 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!--<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>-->
+	<script src="./js/jquery-1.8.2.js"></script>
+	<title>JS无级树树形菜单</title>
+	<style type="text/css">
+		.menuTree {
+			margin-left: 0px;
+		}
+		
+		.menuTree div {
+			padding-left: 1px;
+		}
+		
+		.menuTree div ul {
+			overflow: hidden;
+			display: none;
+			height: auto;
+			margin: 0;
+		}
+		
+		.menuTree span {
+			display: block;
+			height: 35px;
+			line-height: 35px;
+			padding-left: 5px;
+			margin: 1px 0;
+			cursor: pointer;
+			border-bottom: 1px solid #CCC;
+		}
+		
+		.menuTree span:hover {
+			background-color: #e6e6e6;
+			color: #cf0404;
+		}
+		
+		.menuTree a {
+			color: #333;
+			text-decoration: none;
+		}
+		
+		.menuTree a:hover {
+			color: #06F;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div id="menuTree" class="menuTree"></div>
+</body>
+
+</html>
+<script type="text/javascript">
+	var json =
+		[
+			{
+				"Name": "rq",
+				"PropertyType": "CustomerInfoBatchImportRequest",
+				"Description": "",
+				"List": [
+					{
+						"Name": "CustomerList",
+						"PropertyType": "List<CustomerInfoRequest>",
+						"Description": "客户信息接口输入参数列表",
+						"List": [
+							{
+								"Name": "CustomerID",
+								"PropertyType": "UInt32",
+								"Description": "用户ID",
+								"List": []
+							},
+							{
+								"Name": "MarkType",
+								"PropertyType": "Int32",
+								"Description": "标识类型：1：真实昵称 2：模糊昵称 3：手机号唯一标识 4：手机号码 5：微信号ID 6：第三方ID",
+								"List": []
+							},
+							{
+								"Name": "MarkNick",
+								"PropertyType": "String",
+								"Description": "标识账号",
+								"List": []
+							},
+							{
+								"Name": "ECRPID",
+								"PropertyType": "String",
+								"Description": "ECRPID",
+								"List": []
+							},
+							{
+								"Name": "ShopWeChatID",
+								"PropertyType": "String",
+								"Description": "商家微信ID",
+								"List": []
+							},
+							{
+								"Name": "UserName",
+								"PropertyType": "String",
+								"Description": "客户姓名",
+								"List": []
+							},
+							{
+								"Name": "TopUserID",
+								"PropertyType": "Int64",
+								"Description": "淘宝ID",
+								"List": []
+							},
+							{
+								"Name": "Sex",
+								"PropertyType": "Int32",
+								"Description": "性别 0：女 1：男 -1：未知",
+								"List": []
+							},
+							{
+								"Name": "Birthday",
+								"PropertyType": "DateTime",
+								"Description": "生日",
+								"List": []
+							},
+							{
+								"Name": "Marriage",
+								"PropertyType": "Int32",
+								"Description": "婚姻状况",
+								"List": []
+							},
+							{
+								"Name": "Occupation",
+								"PropertyType": "String",
+								"Description": "职业",
+								"List": []
+							},
+							{
+								"Name": "MobilePhone",
+								"PropertyType": "String",
+								"Description": "手机",
+								"List": []
+							},
+							{
+								"Name": "Email",
+								"PropertyType": "String",
+								"Description": "邮箱",
+								"List": []
+							},
+							{
+								"Name": "Alipay",
+								"PropertyType": "String",
+								"Description": "买家支付宝账户",
+								"List": []
+							},
+							{
+								"Name": "QQ",
+								"PropertyType": "String",
+								"Description": "QQ",
+								"List": []
+							},
+							{
+								"Name": "WeChat",
+								"PropertyType": "String",
+								"Description": "微信号",
+								"List": []
+							},
+							{
+								"Name": "Province",
+								"PropertyType": "String",
+								"Description": "省",
+								"List": []
+							},
+							{
+								"Name": "City",
+								"PropertyType": "String",
+								"Description": "市",
+								"List": []
+							},
+							{
+								"Name": "Area",
+								"PropertyType": "String",
+								"Description": "区",
+								"List": []
+							},
+							{
+								"Name": "Address",
+								"PropertyType": "String",
+								"Description": "地址",
+								"List": []
+							},
+							{
+								"Name": "BabyName",
+								"PropertyType": "String",
+								"Description": "宝宝姓名",
+								"List": []
+							},
+							{
+								"Name": "BabySex",
+								"PropertyType": "Int32",
+								"Description": "宝宝性别 0：女 1：男 -1：未知",
+								"List": []
+							},
+							{
+								"Name": "BabyBirthday",
+								"PropertyType": "DateTime",
+								"Description": "宝宝生日",
+								"List": []
+							},
+							{
+								"Name": "Grade",
+								"PropertyType": "Int32",
+								"Description": "会员等级",
+								"List": []
+							},
+							{
+								"Name": "LifeCard",
+								"PropertyType": "String",
+								"Description": "生活+卡号",
+								"List": []
+							},
+							{
+								"Name": "ExtendNick",
+								"PropertyType": "String",
+								"Description": "第三方昵称",
+								"List": []
+							},
+							{
+								"Name": "ExtendInfo",
+								"PropertyType": "String",
+								"Description": "第三方扩展信息",
+								"List": []
+							}
+						]
+					}
+				]
+			}
+		]
+
+	/*递归实现获取无级树数据并生成DOM结构*/
+	var str = "";
+	var forTree = function (o) {
+		for (var i = 0; i < o.length; i++) {
+			var urlstr = "";
+			try {
+				urlstr = "<div><span>" + o[i]["Name"] + " | " + o[i]["PropertyType"] + " | " + o[i]["Description"] + "</span><ul>";
+
+				str += urlstr;
+				if (o[i]["List"] != null) {
+					forTree(o[i]["List"]);
+				}
+				str += "</ul></div>";
+			} catch (e) { }
+		}
+		return str;
+	}
+	/*添加无级树*/
+	document.getElementById("menuTree").innerHTML = forTree(json);
+
+	/*树形菜单*/
+	var menuTree = function () {
+		//给有子对象的元素加
+		$("#menuTree ul").each(function (index, element) {
+			var ulContent = $(element).html();
+			var spanContent = $(element).siblings("span").html();
+			if (ulContent) {
+				$(element).siblings("span").html(spanContent)
+			}
+		});
+
+		$("#menuTree").find("div span").click(function () {
+			var ul = $(this).siblings("ul");
+			var spanStr = $(this).html();
+			var spanContent = spanStr.substr(3, spanStr.length);
+			if (ul.find("div").html() != null) {
+				if (ul.css("display") == "none") {
+					ul.show(300);
+					//$(this).html("[-]" + spanContent);
+				} else {
+					ul.hide(300);
+					//$(this).html("[+] " + spanContent);
+				}
+			}
+		})
+	} ()
+
+	/*树形列表展开*/
+	$("#btn_open").click(function () {
+		$("#menuTree ul").show(300);
+		curzt("-");
+	})
+
+	/*收缩*/
+	$("#btn_close").click(function () {
+		$("#menuTree ul").hide(300);
+		curzt("+");
+	})
+	function curzt(v) {
+		$("#menuTree span").each(function (index, element) {
+			var ul = $(this).siblings("ul");
+			var spanStr = $(this).html();
+			var spanContent = spanStr.substr(3, spanStr.length);
+			if (ul.find("div").html() != null) {
+				$(this).html("[" + v + "] " + spanContent);
+			}
+		});
+	}
+</script>
